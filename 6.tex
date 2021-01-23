@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\title{\Huge Homework fourth Week}
+\author{\huge Raneem Madani\\ Student Number: 11820975 }
+\date{\today}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5%%%
+\section*{\huge{IX.The Riemann-Stieltjes Integral}}
+\section*{51.Riemann-Stieltjes Integration with Respect to an
+Increasing Integrator}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4$$$$$$$$4
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 5:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{\underline {\color{blue}Solution:}}
+$f$ is bounded function on $[a,b]$ and $\alpha$ increasing on $[a,b]$. We want to show that:
+$$\overline{\int}_a^b f d\alpha=-\underline{\int}_a^b (-f)d\alpha$$
+Let $p=\{x_0,x_1...x_n\}$ be any partion of $[a,b]$.\\
+We know that $\overline{\int}^a_b f d\alpha=inf U(f,p)$, so $\overline{\int}^a_b f d\alpha \leq U(f,p)$\\
+And $\underline{\int}_a^b (-f)d\alpha=sup L(-f,p)$, so $\underline{\int}_a^b (-f)d\alpha\geq L(-f,p)$\\
+\noindent\rule{8cm}{0.4pt}\\
+{\color{red}Claim-1:} $\overline{\int}_a^b f d\alpha\geq -\underline{\int}_a^b (-f)d\alpha$\\
+{\color{red}Proof the claim:} we know that $\left( \overline{\int}_a^b f d\alpha\geq\underline{\int}_a^b fd\alpha\right)\times -1\Rightarrow$\\
+$\left( -\overline{\int}_a^b f d\alpha\leq-\underline{\int}_a^b fd\alpha=\underline{\int}_a^b -fd\alpha\right)\times -1\Rightarrow$\\
+ $\overline{\int}_a^b f d\alpha\geq-\underline{\int}_a^b -fd\alpha$\\
+ \noindent\rule{8cm}{0.4pt}\\
+ {\color{red}Claim-2:} $\overline{\int}_a^b f d\alpha\leq -\underline{\int}_a^b (-f)d\alpha$\\
+{\color{red}Proof the claim:} we know that $\left( \overline{\int}_a^b -f d\alpha\geq\underline{\int}_a^b -fd\alpha\right)\times -1\Rightarrow$\\
+ $\overline{\int}_a^b f d\alpha =\overline{\int}_a^b -(-f) d\alpha=-\overline{\int}_a^b -f d\alpha\leq-\underline{\int}_a^b -fd\alpha\Rightarrow$\\
+  $\overline{\int}_a^b f d\alpha\leq -\underline{\int}_a^b (-f)d\alpha$\\
+ \noindent\rule{8cm}{0.4pt}\\
+ so from claim 1 and claim 2 we have $\overline{\int}_a^b f d\alpha=-\underline{\int}_a^b (-f)d\alpha$, so we are done.
+\end{tcolorbox}
+
+%&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 12:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{\underline {\color{blue}Solution:}}
+$(a)$-Let $p=\{x_0,x_1...x_n\}$ be any partion of $[0,2]$.\\
+$U(f,p)=\sum_{k=1}^n M_k\Delta\alpha_k$, and $M_k=1$, so $\sum_{k=1}^n\Delta\alpha_k$\\
+    $=x_1-x_0+x_2-x_1+...+x_n-x_{n-1}=x_n-x_0=1-0=1$\\
+    and 
+    $L(f,p)=\sum_{k=1}^n m_k\Delta\alpha_k$, and $m_k=0$,\ so
+    $0\sum_{k=1}^n\Delta\alpha_k=0$, since $U(f,p)\neq L(f,P)\Rightarrow f\notin\mathscr{R}_\alpha[0,2]$
+    \\
+  \noindent\rule{8cm}{0.4pt}\\
+    $(b)$-Let $s=\{x_0,x_1...x_n\}$ be any partion of $[0,2]$.\\
+    $U(g,s)=\sum_{k=1}^n M_k\Delta\alpha_k$, and $M_k=1$, so $\sum_{k=1}^n\Delta\alpha_k$\\
+    $=x_1-x_0+x_2-x_1+...+x_n-x_{n-1}=x_n-x_0=1-0=1$\\
+    and $L(g,s)=\sum_{k=1}^n m_k\Delta\alpha_k$, and $m_k=0$, so
+    $0\sum_{k=1}^n\Delta\alpha_k=0$
+    since $U(g,s)\neq L(g,s)\Rightarrow g\notin\mathscr{R}_\alpha[0,2]$\\
+     \noindent\rule{8cm}{0.4pt}\\
+     %&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+$(c)$-Let $p=\{x_0,x_1...x_n\}$ be any partion of $[0,2]$, $\alpha(x)=x$.\\
+$U(f,p)=\sum_{k=1}^n M_k\Delta\alpha_k$, and $M_k=1$, so $\sum_{k=1}^n\Delta\alpha_k$\\
+    $=x_1-x_0+x_2-x_1+...+x_n-x_{n-1}=x_n-x_0=2-0=2$\\
+    and $L(f,p)=\sum_{k=1}^n m_k\Delta\alpha_k$, and $m_k=0$,\ so
+    $0\sum_{k=1}^n\Delta\alpha_k=0$, since $U(f,p)\neq L(f,p)\Rightarrow f\notin\mathscr{R}_\alpha[0,2]$\\
+    
+    Let $s=\{x_0,x_1...x_n\}$ be any partion of $[0,2]$, $\alpha(x)=x$.\\
+$U(g,s)=\sum_{k=1}^n M_k\Delta\alpha_k$, and $M_k=1$, so $\sum_{k=1}^n\Delta\alpha_k$\\
+    $=x_1-x_0+x_2-x_1+...+x_n-x_{n-1}=x_n-x_0=2-0=2$\\
+    and $L(g,s)=\sum_{k=1}^n m_k\Delta\alpha_k$, and $m_k=0$,\ so
+    $0\sum_{k=1}^n\Delta\alpha_k=0$, since $U(g,s)\neq L(g,s)\Rightarrow g\notin\mathscr{R}_\alpha[0,2]$\\
+    
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 18:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{\underline {\color{blue}Solution:}}
+\begin{itemize}
+    \item Let $\alpha(x)=x$ and $f(x)=$
+    $\begin{cases}
+     -1,& x\in\mathbb{Q}\cap[0,1]\\
+      1,& x\in\mathbb{Q}^c\cap[0,1]
+    \end{cases}$\\
+    Now $\overline{\int}_a^b f dx=\sum_{k=1}^n M_k\Delta\alpha_k$, and $M_k=1$, so $\sum_{k=1}^n\Delta\alpha_k$\\
+    $=x_1-x_0+x_2-x_1+...+x_n-x_{n-1}=x_n-x_0=1-0=1$\\
+    and $\underline{\int}_a^b=\sum_{k=1}^n m_k\Delta\alpha_k$, and $m_k=1$, so
+    $-1\sum_{k=1}^n\Delta\alpha_k=$\\
+    $-1[x_1-x_0+x_2-x_1+...+x_n-x_{n-1}]=-1[x_n-x_0]=-1[1-0]=-1$\\
+    so $\overline{\int}_a^b=1\leq -1=\underline{\int}_a^b$ so $f\notin\mathscr{R}_\alpha[0,1]$
+    \item But $|f(x)|=$
+     $\begin{cases}
+      1, & x\in\mathbb{Q}\cap[0,1]\\
+      1,& x\in\mathbb{Q}^c\cap[0,1]
+    \end{cases}$\\
+    so $|f(x)|:=\{1, x\in[0,1]$\}, and $\overline{\int}_a^b=0=\underline{\int}_a^b$, so $|f|\in\mathscr{R}_\alpha[0,1]$
+\end{itemize} 
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black]
+\begin{center}
+     So $|f|\in\mathscr{R}_\alpha[a,b]$, but $f\notin\mathscr{R}_\alpha[a,b]$
+\end{center}
+ 
+\end{tcolorbox}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{54.Functions of Bounded Variation}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 5:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{\underline {\color{blue}Solution:}}
+Since $\alpha(x)\in BV[a,b]$ so $\sum_{k=1}^n|\alpha(x_k)-\alpha{(x_{k-1}}|\leq c,c\in\mathbb{R}$, and we have $|\alpha(x)|>M$, so $\frac{1}{\alpha(x)}\leq \frac{1}{M}$.\\
+Now  $\sum_{k=1}^n|\frac{1}{\alpha(x_k)}-\frac{1}{\alpha(x_{k-1})}|= \sum_{k=1}^n|\frac{\alpha(x_{k-1})-\alpha(x_k)}{\alpha(x_{k-1})\alpha(x_k)}|\leq\frac{c}{M^2}$.\\
+so $\sum_{k=1}^n|\frac{1}{\alpha(x_k)}-\frac{1}{\alpha{(x_{k-1})}}|$ bounded.
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,1007 @@
+\documentclass{amsbook}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\title{\Huge Homework.3}
+\author{\huge Raneem Madani }
+\date{\today}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{ VII:METRIC SPACE}
+\section{35: The distance Function}
+
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 35.3:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+     By \textit{\underline{Triangle Ineq}} we have:\\
+$d(x,z)\leq d(x,y)+d(y,z)$\\
+$\Leftrightarrow d(x,z)-d(y,z) \leq d(x,y) $. . .(1)\\
+Also by \textit{\underline{Triangle Ineq}} we have:\\
+$d(y,z)\leq d(y,x)+d(x,z)$\\
+$\Leftrightarrow d(y,z)-d(x,z)\leq d(y,x) $\\
+$\Leftrightarrow -d(y,x)\leq d(x,z)-d(y,z)$. . .(2)\\
+Hence $d(x,y)=d(y,x)$ from (1),(2) we have $|d(x,z)-d(y,z)|\leq d(x,y)$
+\end{tcolorbox}
+
+%%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 35.5:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+     \begin{itemize}
+    \item Want to show that $d(x,y)=0\Leftrightarrow x=y$\\
+    $\sum_{k=1}^{\infty}|x_k-y_k|=0\\ \Leftrightarrow x_k-y_k=0\\ \Leftrightarrow x=y$, $\forall x,y \in L^1$ 
+    and $ x_k,y_k \in \mathbb{R}$ 
+    \item Want to show that $d(x,y)=d(y,x)$\\
+    $|x_k-y_k|=|y_k-x_k|$\\
+    $\Leftrightarrow \sum_{k=1}^{n}|x_k-y_k|=\sum_{k=1}^{n}|y_k-x_k|$, $\forall n=1,2,3,...$\\
+    But $|x_k-y_k|$ is increasing and bounded $\Rightarrow |x_k-y_k|$ is convergent. \\
+    $\Rightarrow \sum_{k=1}^{\infty}|x_k-y_k|=\sum_{k=1}^{\infty}|y_k-x_k|$\\
+    $\Rightarrow d(x,y)=d(y,x)$
+\end{itemize}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 35.6:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+     \begin{itemize}
+    \item $l^1$ denote the set of all seq \{$a_n$\}
+    $\Rightarrow$ we have $\sum |a_n|$ is convergent\\
+    $\therefore |a_n|\mapsto 0$\\
+    $\Rightarrow a_n\mapsto 0$\\
+    $\therefore $ \{$a_n\} \subset c_0$\\
+    ${\color{red} \therefore l^1\subset c_0}$
+    \item Let $\{ a_n\}\in c_0$\\
+    $\Leftrightarrow a_n$ is convergent to $0$\\
+    $\therefore \{a_n\}$ is bounded \\
+    $\therefore \{ a_n\}\in l^\infty$\\
+    ${\color{red}c_0\subset l^\infty}$
+\end{itemize}
+\begin{center}
+    {\large \color{red} $\therefore l^1\subset c_0 \subset l^\infty$}
+\end{center}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={Exercise 35.8:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ $d[(x_1,x_2),(y_1,y_2)]=d_1(x_1,y_2)+d_2(x_2,y_2)$\\
+  (1)-$d(x,y)=0\iff x=y$ Trivial\\
+  (2)-$d(x,y)=d(y,x)$ Trivial\\
+  (3)-Triangle inequality $d[(x_1,x_2),(z_1,z_2)]=d_1(x_1,x_2)+d_2(z_1,z_2)\leq$\\ 
+  $d_1(x_1,y_1)+d_1(y_1,z_1)+d_2(x_2,y_2)+d_2(y_2,z_2)=$\\
+  $[d_1(x_1,y_1)+d_2(x_2,y_2)]+[d_1(y_1,z_1)+d_2(y_2,z_2)]=$\\ 
+  $d[(x_1,x_2),(y_1,y_2)]+d(y_1,y_2),(z_1,z_2)]$
+\end{tcolorbox}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{36: $\mathbb{R}^n, l^2$}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title= {$(\mathbb{R}^n,d)$ is a metric space, $d=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}:$:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+     To proof triangle inequality we need \textit{\color{blue}Cauchy-Schwarz	Inequality:}\\
+{$$\left |\sum_{k=1}^{n}a_k b_k \right |\leq \sqrt{\sum_{k=1}^{n}a_k^2 \sum_{k=1}^{n}b_k^2}$$}
+$d(x,z)\leq d(x,y)+d(y,z)$\\
+$\Leftrightarrow \sqrt{\sum_{i=1}^{n}(x_i-z_i)^2}\leq 
+\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+$\Leftrightarrow \sum_{i=1}^{n}(x_i-z_i)^2\leq 
+\sum_{i=1}^{n}(x_i-y_i)^2+\sum_{i=1}^{n}(y_i-z_i)^2+2\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+Let $a_i=y_i-x_i$,  $b_i=z_i-y_i$, $\forall i=1,2,3...n$\\
+$\Leftrightarrow z_i-x_i=z_i-y_i+y_i-x_i=b_i+a_i$\\
+$\Leftrightarrow \sum_{i=1}^{n}a_i^2+ \sum_{i=1}^{n}b_i^2+2\sum_{i=1}^{n}a_i b_i\leq 
+\sum_{i=1}^{n}a_i^2+\sum_{i=1}^{n}b_i^2+2\sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$
+$\Leftrightarrow \sum_{i=1}^{n}b_i a_i\leq \sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$ 
+\textit{\color{blue}(Cauchy-Schwarz Inequality)}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={$(\mathbb{L}^n,d)$ is a metric space, $d=\sqrt{\sum_{i=1}^{\infty}(x_i-y_i)^2}:$:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+     To proof triangle inequality we need \textit{\color{blue}Cauchy-Schwarz	Inequality:}\\
+{$$\left |\sum_{k=1}^{n}a_k b_k \right |\leq \sqrt{\sum_{k=1}^{n}a_k^2 \sum_{k=1}^{n}b_k^2}$$}
+$d(x,z)\leq d(x,y)+d(y,z)$\\
+$\Leftrightarrow \sqrt{\sum_{i=1}^{n}(x_i-z_i)^2}\leq 
+\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+$\Leftrightarrow \sum_{i=1}^{n}(x_i-z_i)^2\leq 
+\sum_{i=1}^{n}(x_i-y_i)^2+\sum_{i=1}^{n}(y_i-z_i)^2+2\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+Let $a_i=y_i-x_i$,  $b_i=z_i-y_i$, $\forall i=1,2,3...n$\\
+$\Leftrightarrow z_i-x_i=z_i-y_i+y_i-x_i=b_i+a_i$\\
+$\Leftrightarrow \sum_{i=1}^{n}a_i^2+ \sum_{i=1}^{n}b_i^2+2\sum_{i=1}^{n}a_i b_i\leq 
+\sum_{i=1}^{n}a_i^2+\sum_{i=1}^{n}b_i^2+2\sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$
+$\Leftrightarrow \sum_{i=1}^{n}b_i a_i\leq \sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$ 
+\textit{\color{blue}(Cauchy-Schwarz Inequality)}\\
+$\Rightarrow\sqrt{\sum_{i=1}^{n}(x_i-z_i)^2}\leq 
+\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+For every positive integer $n$ take $n\mapsto\infty,$ then we have:\\
+$d(x,z)=\sqrt{\sum_{i=1}^{\infty}(x_i-z_i)^2}\leq
+\sqrt{\sum_{i=1}^{\infty}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{\infty}(y_i-z_i)^2}$\\
+$=d(x,y)+d(y,z)$\
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={$l^1 \subset l^2 \subset l^\infty$:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+     \begin{enumerate}
+    \item let \{ $a_n$\} $\in l^1 \Rightarrow \sum_{k=1}^{\infty}|a_n|<\infty$\\
+    $|a_n|\mapsto 0$\\
+    $\forall \epsilon>0 \exists k\in \mathbb{N} $ such that:\\
+    $a_k <\epsilon$, $\forall n\geq k$ {\textit{\color{red}(Take $\epsilon=1$)}}\\
+    $\Rightarrow a_k<1$\\
+    $\Rightarrow a_k^2<|a_k|$\\
+    $\sum_{k=1}^{\infty} a_k^2<\sum_{k=1}^{\infty} a_k$
+    \item let $\{a_n\} \in l^2\Rightarrow\sum_{k=1}^{\infty} a_n^2<\infty$\\
+    $\Rightarrow a_n $ is absolutely convergent\\
+    $\Rightarrow a_n$ is bounded\\
+    $\therefore a_n \in l^\infty$\\
+    $\therefore l^2 \subset l^\infty$
+\end{enumerate}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.3:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{\underline {\color{blue}Solution:}}
+  \begin{itemize}
+\item let \{ $a_n$\} $\in l^1 \Rightarrow \sum_{k=1}^{\infty}|a_n|<\infty$\\
+    $|a_n|\mapsto 0$\\
+    $\forall \epsilon>0$, $\exists k\in \mathbb{N} $ such that:\\
+    $a_k <\epsilon$, $\forall n\geq k$ {\textit{\color{red}(Take $\epsilon=1$)}}\\
+    $\Rightarrow a_k<1$\\
+    $\Rightarrow a_k^2<|a_k|$\\
+    $\sum_{k=1}^{\infty} a_k^2<\sum_{k=1}^{\infty} a_k$
+\item let $\{ a_n\}\in l^2\Rightarrow \sum_{n=0}^{\infty}a_n^2<\infty$\\
+    $\Leftrightarrow a_n^2\longmapsto 0$\\
+    $\Rightarrow \{a_n\}\in c_0\Rightarrow l^2\subset c_0$
+\item let $a_n=\frac{1}{n}\Rightarrow$ 
+$a_n\in l^2$, $a_n\notin l^1$\\
+let $b_n=\frac{1}{\sqrt{n}}\Rightarrow$
+$b_n\in c_0$, $b_n\notin l^2$
+ $$\tcbhighmath{\textit{$l^1\subset l^2\subset c_0$}.}$$
+\end{itemize}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.8:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\{a_n\}\in l^1\Rightarrow\sum_{k=1}^{\infty}|a_n|<\infty$\\
+since $\{b_n\}\in l^\infty\Leftrightarrow|b_n|<M$\\
+$\sum_{k=1}^{\infty}|a_n b_n|\leq \sum_{k=1}^{\infty}|a_n| M$\\
+$=M\sum_{k=1}^{\infty}|a_n|<M.\infty=\infty$\\
+$\Rightarrow \sum_{k=1}^{\infty} |a_n b_n|$ is convergent.
+$$\tcbhighmath{\{a_n b_n \}\in l^1}$$
+\end{tcolorbox}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.9:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\{a_n\}\in c_0 \Leftrightarrow a_n\longmapsto 0$\\
+$\forall \epsilon>0$, $\exists k\in\mathbb{N}$ such that $|a_n|<\epsilon_0$ $\forall n\geq k$\\
+let $\{b_n\}\in l^\infty\Leftrightarrow|b_n|\leq M$\\
+let $\epsilon_0=\frac{\epsilon}{M}$\\
+$\Rightarrow |a_n b_n|\leq M|a_n| <M\frac{\epsilon}{M}=\epsilon$
+$$\tcbhighmath{\{a_n b_n\}\in c_0}$$
+{\color{red}Give an example:}\\
+Let $a_n=\frac{1}{\sqrt{n}}\in C_0$, and let $b_n=(-1)^n\in l^\infty\Rightarrow$\\
+$ a_n b_n =\frac{(-1)^n}{\sqrt{n}}\Rightarrow \sum (a_n b_n)^2=\sum \frac{1}{n}\notin l^2\Rightarrow \{a_n 
+b_n\}\notin l^2$
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.10:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\{a_n\} \in l^\infty \Leftrightarrow |a_n| \leq M$\\
+Let $\{b_n\}\in l^\infty\Leftrightarrow |b_n|<N$, $\forall N,M\in \mathbb{R}$\\
+$\Rightarrow |a_n b_n|\leq M.N\Rightarrow$
+$$\tcbhighmath{\{a_n b_n\}\in l^\infty}$$
+{\color{red}Give an example:}\\
+Let $\{a_n\}=(-1)^n$\\
+Let $\{b_n\}=(-1)^{1-n}\Rightarrow$\\
+$a_n b_n=(-1)^n (-1)^{1-n}=(-1)^{n+1-n}=-1$\\
+$a_n b_n=-1\Rightarrow a_n b_n\longmapsto -1$\\
+$\{a_n b_n\}\notin c_0$
+\end{tcolorbox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{37: Sequences in Metric Spaces}
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 37.7:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ \textit{\color{blue}\underline{Solution:}}
+ Let $\{a_n^{(k)}\}$ be a sequence in $l^1$.\\
+ $a\in l^1$, $a=(a_1,a_2,a_3,...)$\\
+ if $\{a^{(k)}\}$ convergent to a then $\lim a_j^{(k)}=a_j$, $\forall j=1,2,3..,$\\
+ $|a_j^{(k)}|-|a_j|<|a_j^{(k)}-a_j|<\epsilon$, $\forall j=1,2,3..,$\\
+ Let $\epsilon =1$\\
+ $\Rightarrow|a_j^{(k)}|<1+|a_j|=M$\\
+ $\Rightarrow |a^{(k)}|<M$
+ $$\tcbhighmath{\{a^{(k)}\}\in l^\infty}$$
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 37.9 (a): ,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+   \textit{\color{blue}\underline{Solution:}}
+  $d:\mathbb{R}^n\times \mathbb{R}^n\longmapsto[0,\infty )$
+   \begin{enumerate}
+       \item $d(x,y)=0\Leftrightarrow x=y$ {\color{red}"Trivial"} 
+       \item $d(x,y)=d(y,x)${\color{red}"Trivial"}
+       \item Triangle inequality: $d(x,z)\leq d(x,y)+d(y,z)$\\
+       $\sum_{i-1}^{n}|x_i-z_i|=\sum_{i=1}^{n}|x_i-y_i+y_i-z_i|$
+       $\leq \sum_{i=1}^{n}|x_i-y_i|+|y_i-z_i|= \sum_{i=1}^{n}|x_i-y_i|+\sum_{i=1}^{n}|y_i-z_i|$
+       $=d(x,y)+d(y,z)$
+       
+   \end{enumerate}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 37.9 (b):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+   \textit{\color{blue}\underline{Solution:}}
+Let $\{a^{(k)}\}$be a sequence in $\mathbb{R}^n$\\
+$d(a^{(k)},a)<\epsilon$, $\forall\epsilon>0$\\
+{\color{red}$"\Rightarrow"$} Let $\{a^{(k)}\}$ convergent to $a$\\
+$d(a^{(k)},a)<\epsilon$\\
+$d(a^{(k)},a)=\sqrt{\sum_{j=1}^{n}(a_j^{(k)}-a_j)^2}$\\
+Let $\epsilon_0=\frac{\epsilon}{n}$\\
+By Theorem: $|a_j^{(k)}-a_j|\leq{\sum_{j=1}^{n}(a_j^{(k)}-a_j)^2}=d(a^{(k)},a)<\epsilon_0\Rightarrow$\\ 
+  $$\tcbhighmath{d'(a^{(k)},a)=\sum_{j=1}^{n}|a_j^{(k)}-a_j|<\sum_{j=1}^{n}\frac{\epsilon}{n}=\frac{\epsilon}{n}
+  n=\epsilon}$$
+$\color{red}"\Leftarrow"$ Let $\{a^{(k)}\}$ convergent to $a$\\
+$d'(a^{(k)},a)=\sum_{j=1}^{n}|a_j^{(k)}-a_j|<\epsilon_0$\\
+$|a_j
+^{(k)}-a_j|<\sum_{j=1}^{n}|a_j^{(k)}-a_j|<\epsilon_0$\\
+Let $\epsilon_0=\frac{\epsilon}{\sqrt{n}}$\\
+ $$\tcbhighmath{d(a^{(k)},a)=\sqrt{\sum_{j=1}^{n}(a_j^{(k)}-a_j)^2}\leq 
+ \sqrt{\sum_{j=1}^{n}(\frac{\epsilon^2}{n})}=\sqrt{\sum_{j=1}^{n}\frac{\epsilon^2}{n}}=\epsilon}$$
+ \end{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{38: Closed Set}
+
+  
+  
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 38.5(a):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+{\color{red} Prove that $x$ is closed $\iff$ $x^\alpha\subseteq x$}\\ \textit{\color{blue}\underline{Proof:}}\\
+{\color{red} $"\Rightarrow"$} let $x$ be a closed set $\Rightarrow \overline{x}=x$\\
+$x^\alpha\subseteq\overline{x}\Longrightarrow x^\alpha\subseteq x$\\
+{\color{red} $"\Leftarrow"$} Let $x^\alpha\subseteq x$\\
+let $a$ be a limit point then $\exists \{x_n\}$ such that $\lim x_n=a$
+\begin{itemize}
+    \item $x_n=a$ for some $n$\\
+    $\Rightarrow a\in x$
+    \item $x_n\neq a$ for some $n$\\
+    $\Rightarrow a\in x^\alpha$ and we suppose that $x^\alpha\subseteq x$\\
+    $\Rightarrow a\in x$
+\end{itemize}
+{\color{red}$\therefore x$ is closed} 
+ \end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 38.5(b):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ \textit{\color{blue}\underline{Proof:}}\\
+Let $x\subseteq\mathbb{R}$ and $x$ is an infinite and bounded set then we have:
+\begin{center}
+    $a_1\in x$\\
+    $a_1\neq a_2\in x$\\
+    $\vdots$\\
+    $a_2\neq a_k\in x$\\
+    $\{a_k\}\subseteq x\subseteq \mathbb{R}$
+\end{center}
+$\exists \{a_{k_l}\}$ that convergent to $a$\\
+$$\tcbhighmath{{\therefore a\in x^\alpha\Rightarrow x^\alpha\neq \phi}}$$ 
+ \end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 38.5(c):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ \textit{\color{blue}\underline{Proof:}} Suppose the contrary,\\
+ Let $X\subseteq\mathbb{R}$ be an uncountable and contains non of accumulation points.\\
+ $\Rightarrow\forall x\in X$, $\exists \epsilon_x>0$ such that:
+ $$\nu_\epsilon (x)\cap X=\{x\}$$
+ $\Rightarrow\exists n\in \mathbb{N}$ such that $X^\alpha=\{x\in X: \epsilon_x>\frac{1}{n}\}$ is uncountable.\\
+ consider the family:
+ $$\tcbhighmath{\{(x-\frac{1}{2n},x+\frac{1}{2n}):x\in X^\alpha\}}$$
+ this is an uncountable family of pairwise disjoint open subsets of $\mathbb{R}$ which contradicts that the 
+ countable set $\mathbb{Q}$ is a dense subset of
+ $\mathbb{R}$.
+
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={Exercise 38.13:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black}]
+  
+    {\color{red}{(a)-$\overline{X}=\overline{\overline{X}}$.}}\\
+    It's clear that $\overline{X}\subseteq\overline{\overline{X}}$\\
+    Now want to show that $\overline{\overline{X}}\subseteq\overline{X}$, let 
+    $a\in\overline{\overline{X}}\Rightarrow\exists\{x_n\}\in \overline{X}$such that $x_n\mapsto a$ so $\{x_n\}$ 
+    is a limit 
+    point of $X\Rightarrow\exists\{y_k\}_{k=1}^\infty$ is a sequence in $X$ such that $y_k^{k_n}\mapsto 
+    x_n$.claim that 
+    $y_k^{(k_n)}\mapsto a$ as $n\mapsto\infty$.\\
+    proof the claim : let $\epsilon_0=\frac{\epsilon}{2}>0, d(y_k^{(k_n)},a)\leq 
+    d(y_k^{(k_n)},x_n)+d(x_n,a)<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon\Rightarrow y_k^{(k_n)}\mapsto 
+    a\Rightarrow 
+    a\in\overline{X}$\\
+  {\color{red}{(b)-$\overline{X}$ is closed in $M$:}}\\
+  Let $a\in \overline{\overline{X}}$ i.e ($a$ is a limit point of $\overline{X}$
+  but $\overline{X}=\overline{\overline{X}}\Rightarrow a\in\overline{X}$\\
+  {\color{red}{(c)-if $X\subset Y\subset M\Rightarrow \overline{X}\subset\overline{Y}$.}}\\
+  Let $a\in\overline{X}\Rightarrow\exists\{x_n\}\in X$ such that $x_n\mapsto a$, since $\{x_n\}\subseteq 
+  X\subset Y\Rightarrow\{x_n\}\in Y\Rightarrow a\in \overline{Y}$.\\
+  {\color{red}{(d)-$\overline{X\cup Y}= \overline{X}\cap \overline{Y}$.}}\\
+  Let $a\in \overline{X\cup Y}\Rightarrow a$ is a limit point of $X\cup Y\Rightarrow\exists\{x_n\}\subset X\cup 
+  Y$
+  such that $x_n\mapsto a$ in $Y$ or $x_n\mapsto a $ in $X\Rightarrow a\in \overline{X}$ or
+  $a\in \overline{Y}\Rightarrow a\in \overline{X}\cup\overline{Y}\Rightarrow\overline{X\cup 
+  Y}\subseteq\overline{X}\cup \overline{Y}$\\
+  Now $X\subseteq X\cup Y$ and $Y\subseteq X\cup Y\Rightarrow\overline{X}\subseteq\overline{X\cup Y}$ and 
+  $\overline{Y}\subseteq\overline{X\cup Y}\Rightarrow \overline{X}\cup\overline{Y}\subseteq \overline{X\cup 
+  Y}$\\
+  {\color{red}{(e)-) If $Y$ is a closed subset of $M$ such that $\overline{X}\subset Y$, then $X\subset Y$.}}\\
+  since $Y$ is closed $\Rightarrow Y$ contains all limit points.\\
+  and $X\subset\overline{X}\subset Y\Rightarrow X\subset Y$.\\
+  {\color{red}{(f)-$\overline{X}=\cap\{ Y|Y$ is closed and $X\subseteq Y\}$.}}\\
+  *$X\subseteq Y\Rightarrow \overline{X}\subseteq\overline{Y}=Y\Rightarrow\overline{X}\subseteq Y\subseteq 
+  \overline{X}\subseteq\cap Y$.\\
+  *$X\subseteq\overline{X}$ and $\overline{X}$ is closed $\Rightarrow\cap Y\subseteq\overline{X}$.
+  
+  \end{tcolorbox}
+  
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  
+  \begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={Exercise 38.14:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+Let $z$ be a limit point of $\{x_n: n\in\mathbb{N}\}$. So there is a sequence $\{z_k\}$ 
+such that $z_k\in \{x_n:n\in\mathbb{N}\}$ for all $k$ and 
+$\lim_{k\mapsto\infty} z_k=z$.\\
+Suppose for a contradiction that $z\notin\{x_n:n\in\mathbb{N}\}$. By induction on $m$, we 
+define a sequence $\{a_m\}$ which is a subsequence of both $\{x_n\}$ and 
+$\{z_k\}$. For the base case, set $a_1=z_1=x_n$ for some integer $n$. For the 
+inductive step, suppose we have defined $a_1,..., a_m$ and $a_m=z_k=x_n$. Note the
+set $\{z_{k+1}, z_{k+2},...\}$ is infinite for otherwise some $x_j$ appears in 
+this set an infinite number of times, contradicting the fact that 
+$\lim_{k\mapsto\infty} z_k=z\neq x_j$.\\
+Since $x_1, x_2,...$ is an enumeration of $\{x_n: n\in P\}$,
+and since the set $\{z_{k+1}, z_{k+2},...\}$ is infinite but $\{x_1,..., x_n\}$ is
+finite, there exists some $n'> n$ such
+that $x_{n'}=z_{k'}$ for some $k'>k$. Set $a_{m+1}=z_{k'}=x_{n'}$ . Note that 
+$\{a_m\}$ is a subsequence of both $\{z_k\}$ and $\{x_n\}$. Since $\{z_k\}$ 
+converges, so does $\{a_m\}$, contradicting the assumption that $\{x_n\}$ has no
+convergent subsequence.
+  
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Prove that $B_\epsilon (x)$is open set:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+     Let $y\in B_\epsilon (x)$, want to find $\delta >0$ such that:\\
+     $B_\delta (y)\subseteq B_\epsilon (x)$\\
+     consider $\delta=\epsilon-d(x,y)>0$\\
+     $\Rightarrow d(x,y)<\epsilon\Rightarrow \epsilon-d(x,y)>0$\\
+     Let $z\in B_\delta (y)\Rightarrow d(z,y)<\delta$\\
+     $\Rightarrow d(z,y)<\epsilon-d(x,y)$\\
+     $d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\epsilon$\\
+     $=d(x,y)+\epsilon-d(x,y)=\epsilon$\\
+     $\therefore d(x,z)<\epsilon\Rightarrow z\in B_\epsilon (x)\Rightarrow B_\delta (y) \subseteq B_\epsilon 
+     (x)$\\
+     so $B_\epsilon (x)$ is an open set of $M$
+
+\end{tcolorbox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{39: Open Set}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={Exercise 39.9::},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+{\color{red}{Proof:}}We want to show that $X$ is open subset of $M\iff X=\bigcup B_\epsilon(x),$ $\forall x\in 
+X$.\\
+{\color{red} "$\Rightarrow"$}\\
+  suppose that $X$ is open, then by definition $\forall x\in X,\exists\epsilon>0$ such that 
+  $B_\epsilon(x)\subset X$\\
+  since $x\in X\Rightarrow X=\bigcup_{x\in X} \{x\}\subset\bigcup B_\epsilon(x)\subset X\Longrightarrow 
+  X=\bigcup B_\epsilon(x)$\\
+  {\color{red}$"\Leftarrow"$}\\
+Let $ X=\bigcup B_\epsilon(x),\forall x\in X$, but each ball is open and by theorem 39.6(ii)\\
+$\Rightarrow X=$ union of open sets $\Rightarrow X$ is open.
+\end{tcolorbox}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={Exercise 39.10:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  {\color{red}{Proof:}}  
+{\color{red} "$\Rightarrow"$}\\
+Suppose $X$ is closed $X=\overline{X}$, so let $a\in M$ such that $B_\frac{1}{k}(a)\cap X\neq\phi$ pick $X_k\in 
+B_\frac{1}{k}\cap X$\\
+we have $\{x_k\}_{k=1}^\infty$ is a sequence in $X$ and $x_k\in B_\frac{1}{k}(a),d(x_k,a)<\frac{1}{k}$\\
+$x_k\mapsto a$ as $k\mapsto\infty$, so $a$ is a limit point of $x$\\
+$a\in\overline{X}\Rightarrow a\in X$.\\
+{\color{red}$"\Leftarrow"$}\\
+Let $a\in M$ such that if $B_\epsilon(\alpha)\cap X\neq \phi,\forall \epsilon>0\Rightarrow \alpha\in X$\\
+Let $\alpha$ be a limit point of $X\Rightarrow\exists\{x_n\}_{n=1}^\infty$ in $X$ such that $x_n\mapsto\alpha$, 
+so $\forall\epsilon>0\exists k\in\mathbb{N}$ such that $d(x_n,\alpha)<\epsilon\Rightarrow x_n\in 
+B_\epsilon(\alpha)\cap X,\forall n\geq k$\\
+$\Rightarrow B_\epsilon(\alpha)\cap X\neq \phi$ and $\alpha\in X\Rightarrow X$ is closed.
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{tcolorbox}[enhanced,attach boxed title to top 
+center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={Exercise 39.11:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ {\color{red}{(a)-$X^0\subset X$ for $X\subset M$.}}\\
+ Let $x\in X^0,\exists\epsilon>0$ such that $B_\epsilon(x)\subseteq X\Rightarrow 
+ x\in X$.
+
+  {\color{red}{(b)-$X$ is open $\iff X^0=X$.}}\\
+"$\Rightarrow$" Let $X$ be an open subset of $M\iff X=\bigcup 
+B_\epsilon(x)\Rightarrow X^0=X$\\
+"$\Leftarrow$" Let $X^0=X\Rightarrow\forall x\in X,\exists\epsilon>0$ such that 
+$B_\epsilon(x)\subseteq X\Rightarrow X$ open.
+
+ {\color{red}{(c)-$(X^0)^0=X^0$.}}\\
+"$\Rightarrow$"Let $x\in (X^0)^0\Rightarrow B_\epsilon(x)\subseteq X^0\Rightarrow 
+(X^0)^0\subseteq X^0$\\
+"$\Leftarrow$"Let $x\in X^0\Rightarrow B_\epsilon(x)\subset X\Rightarrow x$ is 
+interior point of $X^0\Rightarrow x\in B_{\frac{\epsilon}{2}}(x)$\\
+$\Rightarrow x\in (X^0)^0$ so $X^0\subseteq (X^0)^0$\\
+$X^0=(X^0)^0$.
+
+ {\color{red}{(d)-$X^0$ is open for all $X\in M$.}}\\
+Let $x\in X^0\Rightarrow B_\epsilon(x)\subseteq X$, by definition the union of open 
+set is open$\Rightarrow\bigcup B_\epsilon(x)=X^0$ is open.
+
+{\color{red}{(e)- if $X\subset Y\subset M$ then $X^0\subset Y^0$, Proof:}}\\
+Let $x\in X^0\Rightarrow B_\epsilon(x)\subseteq X\subset Y$, since  $X\subset 
+Y\Rightarrow\exists x\in X$ then $x\in Y$ and $B_\epsilon(x)\subset Y\Rightarrow 
+x\in Y^0,\Rightarrow X^0\subset Y^0$
+
+{\color{red}{(f)-$X^0\cap Y^0=(X\cap Y)^0$.}}\\
+"$\Rightarrow$" Let $a\in (X\cap Y)^0\Rightarrow B_\epsilon(a)\subseteq X\cap
+Y\Rightarrow B_\epsilon(a)\subseteq X$ and $B_\epsilon(a)\subseteq Y\Rightarrow a\in
+X^0$ and $a\in Y^0\Rightarrow a\in X^0\cap Y^0\cdots $(1)\\
+"$\Leftarrow$" Let $a\in X^0\cap Y^0\Rightarrow a\in X^0$ and $a\in Y^0\Rightarrow 
+B_\epsilon(a)\subseteq X$ and $B_\epsilon(a)\subseteq Y\Rightarrow 
+B_\epsilon(a)\subset X\cap Y\Rightarrow a\in (X\cap Y)^0\cdots $(2)\\
+from (1) and (2) we have $X^0\cap Y^0=(X\cap Y)^0$
+
+{\color{red}{(g)-If $Y$ is an open subset of $M$ such that $Y\subset X\subset M$, 
+then $Y\subset X^0$.}}\\
+Let $Y\subset X$ and $Y$ be an open $\Rightarrow.\forall y\in Y,\exists\epsilon>0$ 
+such that $B_\epsilon(y)\subseteq Y$, since $y\in Y\subset X\Rightarrow y\in X$ and 
+$B_\epsilon (y)\subset X\Rightarrow y\in X^0\Longrightarrow Y\subset X^0$
+
+{\color{red}{(h)- If $X\subset M$, then $X^0=\cup\{Y|Y\subset X$ and $Y$
+is open$\}$.}}\\
+since $X^0$ is open then $X^0\subseteq X$ and we know that $X^0\subseteq
+\cup \{Y|Y\subset X$ and $Y$ is open $\}$. Now let $y\in Y\Rightarrow y\in \cup Y$, since $Y$ is open 
+$\Rightarrow\forall y\in Y,\exists\epsilon>0$ such that 
+$B_\epsilon(y)\subseteq Y\subseteq\cup Y$ and $\cup Y\subset 
+X\Rightarrow B_\epsilon(y)\subseteq X\Rightarrow y\in X^0$.
+
+{\color{red}{(i)-$\overline{X^c}=(X^0)^c$ for all $X\subset M$.}}\\
+Let $x\in \overline{X^c}\Rightarrow\exists\{x_n\}\subset X^c$ such that $x_n\mapsto 
+x$,$\forall\epsilon>0,\exists x_k\subset X^c$ such that
+$d(x_k,x)<\epsilon$ that mean $\forall B_\epsilon(x)$ you will find $x_k\nsubseteq X\Rightarrow a\notin 
+X^0\Rightarrow a\in (X^0)^c\Rightarrow \overline{X^c}\subseteq(X^0)^c$.\\
+now let $x\in (x^0)^c\Rightarrow a\notin X^0\Rightarrow$ for any ball around $x,\epsilon=\frac{1}{n},\forall 
+n=1,2,3..$, $\exists x_n\notin X(x_n \in X^c)$ and $x_n\mapsto x\Rightarrow x\in X^c\Rightarrow (X^0)^c\subseteq
+\overline{X^c}$
+\end{tcolorbox}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title={Exercise 39.12:},fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+   {\color{red}{Proof:}}  
+$\delta X=\overline{X}\cap\overline{X^c}$\\
+
+{\color{red}{(a)-$\delta X $ is closed}}\\
+since $\delta X$ is equal of union of closed set then $\delta X$ closed.\\
+
+{\color{red}{(b)-$X\cup\delta X=\overline{X}$}}
+\begin{itemize}
+    \item $X\subset\overline{X}$ and $\delta X\subset \overline{X}\Rightarrow X\cup \delta X\subseteq 
+    \overline{X}$.
+    \item Now let $a\in \overline{X}\Rightarrow $ if $a\in X$ we are done, otherwise $a\in X^c$ and 
+    $X^c\subseteq \overline{X^c}\Rightarrow a\in
+\overline{X^c}\Rightarrow a\in \delta X\Rightarrow \overline{X}\subseteq X\cup\delta X$.
+\end{itemize}
+{\color{red}{(c)-$X$ except $\delta X=X^0$}}
+\begin{itemize}
+    \item Let $a\in X$ except $\delta X\Rightarrow a\in X$ and $a\notin \delta X$, since 
+    $X\subseteq\overline{X}\Rightarrow a\in\overline{X}$, by theorem:$\boxed{X^0\cap\delta X=\phi\Rightarrow 
+    X^0\cup\delta X=\overline{X}}$ and $a\in X,a\notin\delta X\Rightarrow X^0\cap\delta X=\phi$,so 
+    $\overline{X}=X^0\cup\delta X$ and $a\notin\delta X\Rightarrow a\in X^0\Rightarrow$\\
+    $X$ except $\delta X\subseteq X^0$ 
+    \item Now if $a\in X^0$ and $X^0\subseteq X\Rightarrow a\in X$ and since 
+    $X^0\cap \delta X=\phi$, since $a\in X^0\Rightarrow a\notin \delta
+    X$ therefore $a\in X$ and $a\notin\delta X\Rightarrow a\in X$ except $\delta X\Rightarrow X^0\subseteq X$ 
+    except $\delta X$. 
+\end{itemize}
+
+{\color{red}{(d)-If $X$ is a proper nonempty subset of $\mathbb{R}$, then $\delta X\neq\phi$.}}\\
+suppose the contrary: $X\neq\phi, X\notin \mathbb{R}^n$ and $\delta=\phi$ since $\overline{X}=X^0\cup\delta 
+X\Rightarrow
+\overline{X}=X^0$ since $\delta X=\phi$ but $X^0$ is open and $\overline{X}$ is closed $\Rightarrow$ 
+contradiction so $\delta X\neq\phi$.
+  
+\end{tcolorbox}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{40: Continuous Functions on Metric Spaces}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.6:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+Let $f(x)=c$, $f$ is continuous $\iff\forall\epsilon>0,\exists\delta>0$ such that:\\
+if $d_1(x,y)<\delta\Rightarrow d_2(f(x),f(y))<\epsilon,\forall x,y\in M$\\
+$d_2(f(x),f(y))=d_2(c,c)=0<\epsilon$ so $f$ is continuous. 
+\end{tcolorbox}
+
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.7:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+\begin{itemize}
+    \item {\color{red}$(a)\Rightarrow(b)$}\\
+    suppose that f is continuous at $a$, let $U$ be subset of $M_2$ containing $f(a)$ be given.since $f(a)$ is 
+    continuous$\Rightarrow\forall\epsilon>0,\exists\delta>0$ such that $d(x,a)<\delta\Rightarrow 
+    d(f(x),f(a))<\epsilon$, and $B_\epsilon(f(a))$ containing 
+    $U$
+    Take $v:=B_{\delta}(a)$so by theorem:
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+{\color{red}Theorem 39.4:}
+Let $M$ be a metric space. Let $x\in M$ and let $\epsilon> 0.$ Then the open ball $B_\epsilon (x)$ is an open 
+subset of $M$.
+ \end{tcolorbox}
+ $a\in B_\delta (a)$ and $f(B_\delta (a)\subset B_\epsilon (f(a))\subset U \Rightarrow B_\delta(a)\subset 
+ f^{-1}(U)$
+\item {\color{red}$(b)\Rightarrow(a)$}\\
+suppose that  $U$ is an open subset of $M_2$ which contains $f(a)$, there exists an open subset $V$ of $M_1$ 
+which contains $a$ such that contained 
+$f^{-1}(U)$\\
+Given an arbitrary $\epsilon>0$, let $U := B_\epsilon(f(a))$. By Theorem 39.4 $U$ is open, so there exists an 
+open subset $V$ containing $a$ contained in 
+$f^{-1}(B_\epsilon(f(a))).$ Since $V$ is open,there exists $\delta>0$ such that $B_\delta(a)\subset V$ . Then:
+$$B_\delta(a)\subset V\subset f^{-1}(B_\epsilon(f(a)))$$
+so for all $x\in M_1$ with $d_1(x, a)<\delta$ we have that $d_2(f(x), f(a))<\epsilon$. Thus, $f$ is continuous 
+at $a$.
+\end{itemize}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.8:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+The generalized statement is that if $f_1,..., f_n$ are continuous\\ functions from $\mathbb{R}^m$ into 
+$\mathbb{R}$.\\
+$h(x)=(f_1,f_2...f_i):\mathbb{R}^m\longmapsto\mathbb{R}^n$, so We prove this generalized statement, which in 
+particular proves the case $m=1$ and $n=2$.\\
+let $a\in\mathbb{R}^m$, since $f$ is continuous function for all $i=1,2,...n$.
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+{\color{red}Definition 40.1:}
+Definition 40.1: Let $(M_1,d_1)$ and $(M_2,d_2)$ be metric spaces, let , and let $f$ be a function from $M_1$ 
+into $M_2$. We say that $f$ is continuous at 
+$a$ if for every $\epsilon>0$, there exists $\delta>0$ such that if $d_1(x, a)<\delta$, then 
+$d_2(f(x),f(a))<\epsilon$. We say that $f$ is continuous on 
+$M_1$ if $f$ is continuous at every point of $M_1$.
+ \end{tcolorbox}
+ $\Longrightarrow\exists\delta_i$ such that if $d(x,a)<\delta_i\Rightarrow 
+ d(f_i(x),f_i(a))<\sqrt{\frac{\epsilon^2}{n}}$ for all $i\Longrightarrow$
+ $$d(h(x),h(a))=\sqrt{\sum_{i=1}^{n}|f_i(x)-f_i(a)|^2}<\sqrt{\sum_{i=1}^{n}\frac{\epsilon^2}{n}}=\epsilon$$
+ Hence $h$ is a continuous function from $\mathbb{R}^m$ into $\mathbb{R}^n$.
+
+\end{tcolorbox}
+
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.10:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{proof}}
+Let $\epsilon >0$ be given\\
+$\Rightarrow \forall \epsilon>0$, $\exists \delta>0$ such that:\\
+$d_1 (b_n,c_n)<\delta$ whenever $d_2 (f(b_n),f(c_n))<\epsilon$\\
+Let $\{b_n\}\in l^1$ since $\{a_n\}\in l^\infty\Rightarrow |a_n|\leq M$\\
+Let $\{c_n\}\in l^1\Rightarrow d(\{b_n\},\{c_n\})<\delta$\\
+$\sum|b_n-c_n|<\delta$, Let $\delta=\frac{\epsilon}{M}$\\
+$|f(c_n)-f(b_n)|=|\sum a_n c_n-\sum a_n b_n|$\\
+$\leq\sum |a_n||c_n-b_n|<M\frac{\epsilon}{M}=\epsilon$
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.11:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{proof:}}
+Let $\{a_n\} \in l^2\iff \sqrt{\sum_{n=1}^{\infty} a_n ^2}<\epsilon$\\
+want to show that $f$ is continuous at $c=\{c_n\}$ and $b=\{b_n\}$\\
+$\forall\epsilon>0$, $\exists\delta>0$ such that:\\
+$|c_n-b_n|<\delta$ whenever $|f(c_n)-f(b_n)|<\epsilon$\\
+$|f(c_n)-f(b_n)|=|\sum_{n=1}^{\infty}c_n a_n-\sum_{n=1}^{\infty}b_n 
+a_n|=|\sum_{n=1}^{\infty}(a_n)(c_n-b_n)|$\\
+$$\leq\sqrt{\sum_{n=1}^{\infty}
+a_n^2}\sqrt{\sum_{n=1}^{\infty}(c_n-b_n)^2}$$
+{\color{red}$$Let:\delta=\frac{\epsilon}{\sqrt{\sum_{n=1}^{\infty}a_n^2}}$$}
+$$=d(c_n,b_n)\sqrt{\sum_{n=1}^{\infty} 
+a_n^2}<\frac{\epsilon}{\sqrt{\sum_{n=1}^{\infty} 
+a_n^2}}\sqrt{\sum_{n=1}^{\infty} a_n^2}=\epsilon$$
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.15:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+suppose that $f$ is continuous. Note that $(-\infty,c)$ and $(c,\infty)$ are open subsets of $\mathbb{R}$. Hence
+$\{x:f(x)<c\}=f^{-1}((-\infty,c))$ and 
+$\{x:f(x)>c\}=f^{-1}((c,\infty))$ are open in $M$ by Theorem
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+{\color{red}Theorem 40.5:} Let $f$ be a function from a metric space $M_1$ into a metric space $M_2$.The 
+following are equivalent:
+\begin{enumerate}
+     \item $f$ is continuous on $M_1$.
+     \item $f^{-1}(C)$ is closed whenever $C$ is a closed subset of $M_2$.
+     \item $f^{-1}(U)$ is open whenever $U$ is an open subset of $M_2$.
+     $f$ is continuous.
+\end{enumerate}
+\end{tcolorbox}
+Conversely, suppose the sets $\{x:f(x)<c\}$ and $\{x:f(x)>c\}$ are open in $M$ for every $c\in \mathbb{R}$. any 
+open subset $U$ of $\mathbb{R}$ can
+be written as the union of open balls $U=\cup_\alpha\in
+A(a_\alpha,b_\alpha)$, where $A$ is an arbitrary indexing set. Note
+$(a_\alpha,b_\alpha) = (-\infty,b_\alpha)\cup (a_\alpha,\infty)$ and 
+$f^{-1}((a_\alpha,b_\alpha))=f^{-1}((-\infty,b_\alpha))\cup f^{-1}((a_\alpha,\infty)) 
+= \{x:f(x)<b_\alpha\}\cap {x : f(x)>a_\alpha}$.
+Since the intersection of any two open sets is open, each set $f^{-1}((a_\alpha,b_\alpha))$ is open. Since the 
+arbitrary
+union of open sets is open, the set $f^{-1}(U)=\cap_{\alpha\in A}f^{-1}((a_\alpha,b_\alpha))$ is open. Hence by 
+Theorem $40.5(iii)$, $f$ is continuous.
+\end{tcolorbox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{42-Compact Metric Space}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 42.1:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+   \begin{itemize}
+         \item {\color{red}$\mathbb{R}^n$}:
+         let $U_k=\{B_{(k)}\}_{k=1}^{\infty}$ since $U_k$ is the open ball of radius $k$, centred at $0$.\\
+         so $\mathbb{R}^n\subseteq\bigcup_{k=1}^{\infty}\{U_k\}$\\
+         but there is no subcover $U_{k}^{*}$ such that $\bigcup_{k=1}^{\infty}U_{k}^{*}=\mathbb{R}^n$
+         \item we know that $l^1\subset l^2\subset c_0\subset l^\infty$, so it 
+To show that the set is not compact if $M$ is $l^2,c_0$, or $l^\infty$:
+take $$\delta^{(1)}=\{1,0,0,0...\}$$
+$$\delta^{(2)}=\{0,1,0,0...\}$$
+$$\vdots$$
+$$\delta^{(k)}=\{0,0,0,0..,1,..\}$$
+so we have: $\delta^{(k)}_n=
+\begin{cases} 
+    1 ,n=k\\
+0 ,n\neq k 
+   \end{cases}$\\
+   note that $\{\delta^{(k)}\}^{\infty}_{k=1}$ is a sequence of points in $l^2$, $c_0$, or $l^\infty$ that has 
+   no convergent subsequence.
+Therefore $l^2, c_0$, and $l^\infty$ are not compact. By Theorem 43.5.
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+Let M be a metric space. Then $M$ is compact if and only if every sequence in $M$ has a convergent subsequence.
+\end{tcolorbox}
+\end{itemize}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 42.2:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+To show that $X$ is closed, it suffices to show the complement $X^c$ of $X$ is open.
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+ {\color{red}Theorem:}
+Let $M$ be a metric space ,$X\subseteq M$, then $X$ is closed $\iff X^c$ is open.
+ \end{tcolorbox}
+Let $x\in X$ and $y\in X^c$, since $x\neq y\Rightarrow d(x,y)=r$\\
+consider the family:
+$$x\in U_x=\{B_{\frac{r}{2}}(x)\}$$
+$$y\in V_y=\{B_{\frac{r}{2}}(y)\}$$
+and $U_x\cap V_y=\phi$, since $x\in X\Rightarrow X=\bigcup_{i=1}^{n}\{x_i\}\subset\bigcup_{i=1}^{n}U_{x_i}$
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+{\color{red}Definition:}
+ Let $M$ be a metric space, we say that $U_x\subset M$ is open in $M$ if $\forall x\in U_x,\exists 
+ \epsilon=\frac{r}{2}>0,$ such that 
+ $B_{\frac{r}{2}}\subset U_x$
+ \end{tcolorbox}
+so $U_x$ is open.\\
+since $X$ is compact, we have finite subcover, $\exists x_1,x_2...x_n\in X\subset \bigcup_{i=1}^{n}U_{x_i}$\\
+since $U_x\cap V_y=\phi\Longrightarrow$
+$$\left( \bigcup_{i=1}^{n}U_{x_i}\right) \cap \left( \bigcap_{i=1}^{n}V_{y_i}\right)=\phi $$
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+{\color{red}Theorem:}
+ Let $M$ be a metric space, if $V_{y_1},V_{y_2}...V_{y_n}$ are open set $\Rightarrow \bigcap_{i=1}^{n}V_{y_i}$ 
+ is open.
+ \end{tcolorbox}
+so $V=\bigcap_{i=1}^{n}V_{y_i}$is open.\\
+so for every $y\in X^c,\exists$ an open set $V$ such that $y \in V\subset X^c$, Hence $X^c$ is open$\Rightarrow 
+X$ is closed.
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 42.3:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+\begin{itemize}
+    \item since $U_k=\{x_k\}_{k=1}^{n}$ be a finite collection of compact subset of a metric space $M$, then for
+    all $x_1,x_2,...,x_n$ there is a finite 
+    subcover $U^*$ of $\{x_k\}_{k=1}^{n}$, so $\bigcup_{k=1}^{n}U_k$ there exists subcover 
+    $\bigcup_{k=1}^{n}U^*_k$ so $x_1 \cup x_2 \cup...\cup x_n$ is 
+    compact.
+    \item Let $U=\{(n,n+\frac{3}{2}):\forall n\in \mathbb{N}\}$\\
+    there is no finite subcover so $U$ is not compact.
+\end{itemize}     
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 42.6:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}} $f:M\longmapsto\mathbb{R}$, By corollary:
+     \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+{\color{red}Corollary 42.7} If $f$ is a continuous real-valued function on a compact metric
+space $M$, there exist $c,d\in M$ such that $f(c)\leq f(x)\leq f(d)$ for all $x\in M$.That is, $f$ attains a 
+maximum and a minimum on $M$.  
+ \end{tcolorbox}
+ then $f$ has an infimum value, let $x_0\in M$ such that $f(x)\geq f(x_0)>0$, so let $T=\frac{f(x_0)}{2}$ and 
+ $f(x)>T>0$ for all $x,x_0\in M$.
+\end{tcolorbox}
+
+
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 42.12:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+     By definition:
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+     A contraction mapping, on a metric space $(M,d)$ is a function f from $M$ to itself, with the property that
+     there is some non negative real number ${ 
+     0\leq k<1}$,such that for all $x$ and $y$ in $M$, ${d(f(x),f(y))\leq k\,d(x,y).}$
+ \end{tcolorbox}
+ \begin{itemize}
+     \item consider the function $g(x)=d(f(x),x)$ want to show that $g(x)$ is continuous:{\color{red}(By 
+     triangle inequality)} we have:\\
+     $d(f(x),x)-d(f(y),y)\leq (d(x,y)+d(y,f(x)))-(d(y,f(x))+d(f(x),f(y)))=d(x,y)-d(f(x),f(y))<2d(x,y)$\\
+     as similar we have $d(f(y),y)-d(f(x),x)<2d(x,y)$\\
+     $\Rightarrow |d(f(x),x)-d(f(y),y)|<2d(x,y)$, $\forall\epsilon>0,\exists\delta>0$ such that:\\
+     $d(x,y)<\delta,$ whenever $d(f(x),f(y))<\epsilon$ so let $\delta=\frac{\epsilon}{2}\Rightarrow 
+     |d(f(x),x)-d(f(y),y)|<2d(x,y)<2\delta=2\frac{\epsilon}{2}=\epsilon$\\
+     so {\color{red}$g(x)$ continuous function.}
+     \item since $g(x)$ continuous and compact function $\Rightarrow g(x)$ has a minimum value.\\
+     let $c$ be a minimum value, so $d(f(x_0),x_0)=c$\\
+     suppose the contrary, ($f(x_0)\neq x_0$) $\Rightarrow c>0$\\
+     $\Rightarrow d(f(f(x_0)),f(x_0))<d(f(x_0),x_0)=c$ {\color{red}"contradiction"}\\
+     so $f(x_0)=x_0$
+     \item To show that $f(x)=x$ is unique:\\
+     suppose the contrary, let $x\neq y$, $\forall x,y\in M$ such that: $f(x)=x,f(y)=y$, then 
+     $d(f(x),f(y))<f(x,y)$\\
+     but $f(x)=x$ and $f(y)=y$\\
+     so $d(f(x),f(y)=d(x,y)$ {\color{red}"contradiction"}\\
+ \end{itemize}
+\end{tcolorbox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{43-The Bolzano-Weierstrass Characterization}
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 43.1:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+     \begin{itemize}
+\item Want to show that the set $\{x\in M:d(x,0)=1\}$ is closed: by theorem 40.3, let $f(x)=d(x,0)=$ is cont on 
+$M$ and $f^{-1}(\{1\})=\{x\in M:d(x,0)=1\}$
+is continuous preimage of a closed set, so $f(x)$ is closed by theorem:
+ \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+ Theorem 40.5: Let $f$ be a function from a metric space $M_1$
+into a metric space $M_2$.
+The following are equivalent:
+\begin{enumerate}
+    \item[(i)] $f$ is continuous on $M_1$.
+    \item[(ii)] $f^{-1}(C)$ is closed whenever $C$ is a closed subset of $M_2$.
+\end{enumerate}
+\end{tcolorbox}
+\item Want to show that the set $\{x\in M:d(x,0)=1\}$ is bounded:\\
+let $y,z\in M$ so $d(y,z)\leq d(y,0)+d(0,z)=2$, so $d(y,z)\leq 2$, $\forall y,z\in M$ so by definition43.6.
+\item To show that the set is not compact if $M$ is $l^2,c_0$, or $l^\infty$:
+take $$\delta^{(1)}=\{1,0,0,0...\}$$
+$$\delta^{(2)}=\{0,1,0,0...\}$$
+$$\vdots$$
+$$\delta^{(k)}=\{0,0,0,0..,1,..\}$$
+so we have: $\delta^{(k)}_n=
+\begin{cases} 
+    1 ,n=k\\
+0 ,n\neq k 
+   \end{cases}$\\
+   note that $\{\delta^{(k)}\}^{\infty}_{k=1}$ is a sequence of points in $l^2$, $c_0$, or $l^\infty$ that has 
+   no convergent subsequence.
+Therefore $l^2, c_0$, and $l^\infty$ are not compact. By Theorem 43.5.
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+Let M be a metric space. Then $M$ is compact if and only if every sequence in $M$ has a convergent subsequence.
+\end{tcolorbox}
+    \end{itemize}
+\end{tcolorbox}
+
+%$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 43.4:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+     consider continuous function: 
+     $$d:M\times M\longmapsto\mathbb{R}:(a_1,a_2)\longmapsto d(a_1,a_2)$$
+     \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black]
+Corollary 42.7: If $f$ is a continuous real-valued function on a compact metric space $M$, there exist $c,d\in 
+M$ such that $f(c)\leq f(x)\leq f(d)$ for 
+all $x\in M$ . That is, $f$ attains a maximum and a minimum on $M$.
+\end{tcolorbox}
+so, since $d$ defined on compact $M\times M$ then $d$ has a maximum value.\\
+Let $D=diam(M)=lup\{d(x,y):\forall x,y\in M$\\
+By definition of supremum $\exists \{x_n\},\{y_n\}\subset M$ such that:\\ $\lim_{n\mapsto\infty}d(x_n,y_n)=lup\{
+d(x_n,y_n)\}$.\\
+since $(M,d)$ is compact then we have a subsequence $\{(x_{n_k},y_{n_k}):\forall k\in\mathbb{N}\}$ is convergent
+to some $(a_1,a_2)\in M\times 
+M\Longrightarrow$
+$$diam(M)=D=\lim_{n\mapsto\infty}d(x_n,y_n)=\lim_{n\mapsto\infty}d(x_{n_k},y_{n_k})$$
+$$=d\left(\lim_{n\mapsto\infty}x_{n_k},\lim_{n\mapsto\infty}y_{n_k}\right)=d(a_1,a_2)$$
+\end{tcolorbox}
+%--------------------------------------------------------------
+\chapter{IX.The Riemann-Stieltjes Integral}
+\section{51.Riemann-Stieltjes Integration with Respect to an Increasing
+Integrator}
+\section{54. Functions of Bounded Variation}
+\section{55. Riemann-Stieltjes Integration with Respect to Functions of
+Bounded Variation}
+\chapter{X.Sequences and Series of Functions}
+\section{60. Pointwise Convergence and Uniform Convergence}
+\section{61. Integration and Differentiation of Uniformly Convergent
+Sequences}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

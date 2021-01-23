@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\title{\Huge{Modern-Analysis}}
+\author{\Large{Raneem Almadani\\ Student Number:11820975}}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm,amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.6}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\newpage
+
+\begin{document}
+{\Large Name: Raneem Madani\\
+Student Number: 11820975}
+\section*{35:Metric Space}
+\begin{center} \fbox{\fbox{\parbox{5.5in}{\centering Let $M=\mathbb{R}^2$ and 
+$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ prove triangle inequality in different way.}}}
+\end{center}
+{\color{red}\textit{\underline{Solution:}}} Let $x=(x_1,x_2)$, $y=(y_1,y_2)$, $z=(z_1,z_2)$\\
+To show that $d(x,z) \leq d(x,y)+d(y,z)$
+$$\Leftrightarrow \sqrt{(z_1-x_1)^2+(z_2-x_2)^2} \leq
+\sqrt{(y_1-x_1)^2+(y_2-x_2)^2}+\sqrt{(z_1-y_1)^2+(z_2-y_2)^2}$$
+Let $a_i=y_i-x_i$,  $b_i=z_i-y_i$, $\forall i=1,2,3...$\\
+$\Leftrightarrow z_1-x_1=z_1-y_1+y_1-x_1=b_1+a_1$\\
+and $z_2-x_2=z_2-y_2+y_2-x_2=b_2+a_2$\\
+$\Leftrightarrow \sqrt{(b_1+a_1)^2+(b_2+a_2)^2}\leq \sqrt{a_1^2+a_2^2}+\sqrt{b_1^2+b_2^2}$ \hspace{.3cm}{\color{red} (squared the two sides)}\\
+$\Leftrightarrow (b_1+a_1)^2+(b_2+a_2)^2\leq a_1^2+a_2^2+b_1^2+b_2^2+2\sqrt{a_1^2+a_2^2}\sqrt{b_1^2+b_2^2}$\\
+$\Leftrightarrow b_1^2+a_1^2+2b_1a_1+b_2^2+a_2^2+2b_2a_2 \leq a_1^2+a_2^2+b_1^2+b_2^2+2\sqrt{a_1^2+a_2^2}\sqrt{b_1^2+b_2^2}$\\
+$\Leftrightarrow b_1a_1+b_2a_2\leq \sqrt{a_1^2+a_2^2}\sqrt{b_1^2+b_2^2}$ 
+\hspace{.3cm}{\color{red} (squared the two sides)}\\
+$\Leftrightarrow b_1^2a_1^2+b_2^2a_2^2+2a_1a_2b_1b_2 \leq a_1^2b_1^2+a_1^2b_2^2+a_2^2b_1^2+a_2^2b_2^2$\\
+$\Leftrightarrow 0\leq a_1^2b_2^2+a_2^2b_1^2-2a_1a_2b_1b_2$\\
+$\Leftrightarrow 0\leq (a_1b_2-a_2b_1)^2$\\
+{\color{red}So $d(x,z)\leq d(x,y)+d(y,z)$}\qed
+\newpage
+
+
+
+
+
+\begin{center} \fbox{\fbox{\parbox{5.5in}{\centering 35.1-Verify	that the function $d$ of {\color{blue}{Example 35.5}} satisfies {\color{blue}Definition 35.1} (i) and (ii).}}}
+\end{center}
+\textit{\color{red}\underline{Solution:}}
+\begin{itemize}
+    \item Want to show that $d(x,y)=0\Leftrightarrow x=y$\\
+    $\sum_{k=1}^{\infty}|x_k-y_k|=0\\ \Leftrightarrow x_k-y_k=0\\ \Leftrightarrow x=y$, $\forall x,y \in L^1$ and $ x_k,y_k \in \mathbb{R}$ \qed
+    \item Want to show that $d(x,y)=d(y,x)$\\
+    $|x_k-y_k|=|y_k-x_k|$\\
+    $\Leftrightarrow \sum_{k=1}^{n}|x_k-y_k|=\sum_{k=1}^{n}|y_k-x_k|$, $\forall n=1,2,3,...$\\
+    But $|x_k-y_k|$ is increasing and bounded $\Rightarrow |x_k-y_k|$ is convergent. \\
+    $\Rightarrow \sum_{k=1}^{\infty}|x_k-y_k|=\sum_{k=1}^{\infty}|y_k-x_k|$\\
+    $\Rightarrow d(x,y)=d(y,x)$\qed
+\end{itemize}
+\newpage
+
+
+
+
+
+
+\begin{center} \fbox{\fbox{\parbox{5.5in}{\centering 35.3-Let	d	be	a	metric	on	a	set	$M$.	Prove	that $$|d(x,z)-d(y,z)|\leq d(x,y)$$ }}}
+\end{center}
+\textit{\underline{\color{red}Solution:}}\\
+By \textit{\underline{Triangle Ineq}} we have:\\
+$d(x,z)\leq d(x,y)+d(y,z)$\\
+$\Leftrightarrow d(x,z)-d(y,z) \leq d(x,y) $. . .(1)\\
+Also by \textit{\underline{Triangle Ineq}} we have:\\
+$d(y,z)\leq d(y,x)+d(x,z)$\\
+$\Leftrightarrow d(y,z)-d(x,z)\leq d(y,x) $\\
+$\Leftrightarrow -d(y,x)\leq d(x,z)-d(y,z)$. . .(2)\\
+Hence $d(x,y)=d(y,x)$ from (1),(2) we have $|d(x,z)-d(y,z)|\leq d(x,y)$\qed
+\newpage
+
+
+
+
+
+
+\begin{center} \fbox{\fbox{\parbox{5.5in}{\centering 35.6-Let $l^\infty$ denote	the	set	of	all	bounded	real sequences,	and	let	$c_0$ denote the set of	all	real sequences which converge to	0.\\
+Prove	that $l^1\subset c_0 \subset l^\infty$}}}
+\end{center}
+\textit{\underline{\color{red}Solution:}}
+\begin{itemize}
+    \item $l^1$ denote the set of all seq \{$a_n$\}
+    $\Rightarrow$ we have $\sum |a_n|$ is convergent\\
+    $\therefore |a_n|\mapsto 0$\\
+    $\Rightarrow a_n\mapsto 0$\\
+    $\therefore $ \{$a_n\} \subset c_0$\\
+    ${\color{red} \therefore l^1\subset c_0}$\qed
+    \item Let $\{ a_n\}\in c_0$\\
+    $\Leftrightarrow a_n$ is convergent to $0$\\
+    $\therefore \{a_n\}$ is bounded \\
+    $\therefore \{ a_n\}\in l^\infty$\\
+    ${\color{red}c_0\subset l^\infty}$\qed
+\end{itemize}
+\begin{center}
+    {\large \color{red} $\therefore l^1\subset c_0 \subset l^\infty$}
+\end{center}
+\newpage
+
+
+
+
+
+\section*{36.$\mathbb{R}^n,\mathscr{L}^2$}
+
+
+\begin{center} \fbox{\fbox{\parbox{5.5in}{\centering $(\mathbb{R}^n,d)$ is a metric space, $d=\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}:$}}}
+\end{center}
+\textit{\underline{\color{red}Proof:}}
+To proof triangle inequality we need \textit{\color{blue}Cauchy-Schwarz	Inequality:}\\
+{$$\left |\sum_{k=1}^{n}a_k b_k \right |\leq \sqrt{\sum_{k=1}^{n}a_k^2 \sum_{k=1}^{n}b_k^2}$$}
+$d(x,z)\leq d(x,y)+d(y,z)$\\
+$\Leftrightarrow \sqrt{\sum_{i=1}^{n}(x_i-z_i)^2}\leq \sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+$\Leftrightarrow \sum_{i=1}^{n}(x_i-z_i)^2\leq \sum_{i=1}^{n}(x_i-y_i)^2+\sum_{i=1}^{n}(y_i-z_i)^2+2\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+Let $a_i=y_i-x_i$,  $b_i=z_i-y_i$, $\forall i=1,2,3...n$\\
+$\Leftrightarrow z_i-x_i=z_i-y_i+y_i-x_i=b_i+a_i$\\
+$\Leftrightarrow \sum_{i=1}^{n}a_i^2+ \sum_{i=1}^{n}b_i^2+2\sum_{i=1}^{n}a_i b_i\leq \sum_{i=1}^{n}a_i^2+\sum_{i=1}^{n}b_i^2+2\sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$
+$\Leftrightarrow \sum_{i=1}^{n}b_i a_i\leq \sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$ \textit{\color{blue}(Cauchy-Schwarz Inequality)}\qed
+\newpage
+
+
+
+\begin{center} \fbox{\fbox{\parbox{5.5in}{\centering $(\mathbb{L}^n,d)$ is a metric space, $d=\sqrt{\sum_{i=1}^{\infty}(x_i-y_i)^2}:$}}}
+\end{center}
+\textit{\underline{\color{red}Proof:}}
+To proof triangle inequality we need \textit{\color{blue}Cauchy-Schwarz	Inequality:}\\
+{$$\left |\sum_{k=1}^{n}a_k b_k \right |\leq \sqrt{\sum_{k=1}^{n}a_k^2 \sum_{k=1}^{n}b_k^2}$$}
+$d(x,z)\leq d(x,y)+d(y,z)$\\
+$\Leftrightarrow \sqrt{\sum_{i=1}^{n}(x_i-z_i)^2}\leq \sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+$\Leftrightarrow \sum_{i=1}^{n}(x_i-z_i)^2\leq \sum_{i=1}^{n}(x_i-y_i)^2+\sum_{i=1}^{n}(y_i-z_i)^2+2\sqrt{\sum_{i=1}^{n}(x_i-y_i)^2\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+Let $a_i=y_i-x_i$,  $b_i=z_i-y_i$, $\forall i=1,2,3...n$\\
+$\Leftrightarrow z_i-x_i=z_i-y_i+y_i-x_i=b_i+a_i$\\
+$\Leftrightarrow \sum_{i=1}^{n}a_i^2+ \sum_{i=1}^{n}b_i^2+2\sum_{i=1}^{n}a_i b_i\leq \sum_{i=1}^{n}a_i^2+\sum_{i=1}^{n}b_i^2+2\sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$
+$\Leftrightarrow \sum_{i=1}^{n}b_i a_i\leq \sqrt{\sum_{i=1}^{n}a_i^2\sum_{i=1}^{n} b_i^2}$ \textit{\color{blue}(Cauchy-Schwarz Inequality)}\\
+$\Rightarrow\sqrt{\sum_{i=1}^{n}(x_i-z_i)^2}\leq \sqrt{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{n}(y_i-z_i)^2}$\\
+For every positive integer $n$ take $n\mapsto\infty,$ then we have:\\
+$d(x,z)=\sqrt{\sum_{i=1}^{\infty}(x_i-z_i)^2}\leq
+\sqrt{\sum_{i=1}^{\infty}(x_i-y_i)^2}+\sqrt{\sum_{i=1}^{\infty}(y_i-z_i)^2}$\\
+$=d(x,y)+d(y,z)$\
+\newpage
+
+
+
+\begin{center}
+    
+\fbox{\fbox{\parbox{5.5in}{ Prove that: \begin{itemize}
+    \item $l^1 \subset l^2$
+    \item $l^2 \subset l^\infty$
+\end{itemize}}}}
+\end{center}
+\textit{\underline{\color{red}Proof:}}
+\begin{enumerate}
+    \item let \{ $a_n$\} $\in l^1 \Rightarrow \sum_{k=1}^{\infty}|a_n|<\infty$\\
+    $|a_n|\mapsto 0$\\
+    $\forall \epsilon>0 \exists k\in \mathbb{N} $ such that:\\
+    $a_k <\epsilon$, $\forall n\geq k$ {\textit{\color{red}(Take $\epsilon=1$)}}\\
+    $\Rightarrow a_k<1$\\
+    $\Rightarrow a_k^2<|a_k|$\\
+    $\sum_{k=1}^{\infty} a_k^2<\sum_{k=1}^{\infty} a_k$
+    \item let $\{a_n\} \in l^2\Rightarrow\sum_{k=1}^{\infty} a_n^2<\infty$\\
+    $\Rightarrow a_n $ is absolutely convergent\\
+    $\Rightarrow a_n$ is bounded\\
+    $\therefore a_n \in l^\infty$\\
+    $\therefore l^2 \subset l^\infty$
+\end{enumerate}
+
+
+\end{document}
+

@@ -1,0 +1,168 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\title{\Huge Homework-5}
+\author{\huge Raneem Madani\\ Student Number: 11820975 }
+\date{\today}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{animate}
+\begin{document}
+\maketitle
+
+\section*{55.Riemann-Stieltjes Integration with Respect to Functions of
+Bounded Variation}
+%--------------------------------------------------------------------------------
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=black!5!white,colframe=black!75!black,colbacktitle=red!80!black,
+  title=Exercise-55.3:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ \begin{enumerate}
+         \item[\color{red}(a)] {\color{red}$\int_0^3 \sqrt{x}d x^3$}\\
+         since $\alpha(x)=x^3$ is continuous and differentiable on $[0,3]\Rightarrow$
+         $$=\int_0^3 \sqrt{x}d x^3=\int_0^3 \sqrt{x} 3x^2d x=3\int_0^3 \sqrt{x}x^2d x$$
+         $$3 \left(\frac{x^{\frac{5}{2}+1}}{\frac{5}{2}+1}\right)=6\frac{\sqrt{3^7}}{7}$$
+               \noindent{\color{black}\rule{\linewidth}{.3mm}}
+         \item[\color{red}(b)] {\color{red}$\int_1^4 \sqrt{x^2+1}d (x^2+3)$}\\
+         since $\alpha(x)=(x^2+3)$ is continuous and differentiable on $[1,4]\Rightarrow$
+         $$\int_1^4 \sqrt{x^2+1}d (x^2+3)=\int_1^4\sqrt{x^2+1}2xdx=2\int_1^4\sqrt{x^4+x^2}dx=44.8$$
+               \noindent{\color{black}\rule{\linewidth}{.3mm}}
+         \item[\color{red}(c)] {\color{red}$\int_1^4 x-[x]d x^2$}\\
+         since $\alpha(x)=x^2$ is continuous and differentiable on $[1,4]\Rightarrow$
+         $$\int_1^4 x-[x]d x^2=\int_1^2 x-[x]d x^2+\int_2^3 x-[x]d x^2+\int_3^4 x-[x]d x^2$$
+         $$\int_1^4 x-[x]d x^2=\int_1^2 x-1d x^2+\int_2^3 x-2d x^2+\int_3^4 x-3d x^2$$
+         $$=\int_1^2 2x^2-2x d x+\int_2^32x^2-4x d x+\int_3^4 2x^2-6x d x$$
+         $$\frac{2x^3}{3}-x^2|_1^2+\frac{2x^3}{3}-2x^2|_2^3+\frac{2x^3}{3}-3x^2|_3^4=8$$
+
+     \end{enumerate}
+\end{tcolorbox}
+
+%--------------------------------------------------------------------------------
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=black!5!white,colframe=black!75!black,colbacktitle=red!80!black,
+  title=Exercise-55.6:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{ {\color{red}\underline{Solution:}}}
+Since $\alpha\in BV[a,b]$ and $f$ continuous, then by theorem $f\in\mathscr{R}[a,b]$\\
+Now it's clearly that:
+$$L(f,P,T)\leq S(f,p,T)\leq U(f,P)$$
+$\Rightarrow\int_a^b fd\alpha-\epsilon<L$\\
+and $\int_a^b fd\alpha+\epsilon<U$
+$\Rightarrow\int_a^b fd\alpha-\epsilon< L(f,p)\leq S(f,p,T)\leq U(f,p)< \int_a^b fd\alpha+\epsilon$\\
+$\Rightarrow\int_a^b fd\alpha-\epsilon<S(f,p,T)<int_a^b fd\alpha+\epsilon$\\
+$|S(f,p,T)-\int_a^b fd\alpha|<\epsilon\Rightarrow$\\
+$$\lim_{norm~p\to 0}S(f,p,T)=\int_a^b fd\alpha$$
+\end{tcolorbox}
+
+%-------------------------------------------------------------------------------------------------------------------
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=black!5!white,colframe=black!75!black,colbacktitle=red!80!black,
+  title=Exercise-55.9:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{ {\color{red}\underline{Solution:}}}
+$$Max\{f,g\}=\frac{f+g+|f-g|}{2}$$
+By theorem if $f,g\in\mathscr{R}[a,b],c\in\mathbb{R}\Rightarrow$
+\begin{itemize}
+    \item $f+g\in\mathscr{R}[a,b]$
+    \item $|f|\in\mathscr{R}[a,b]$
+    \item $cf\in\mathscr{R}[a,b]$
+\end{itemize}
+So $Max\{f,g\}=\frac{f+g+|f-g|}{2}$
+\end{tcolorbox}
+%--------------------------------------------------------------------------------
+
+
+\section*{60.Pointwise Convergence and Uniform Convergence}
+%--------------------------------------------------------------------------------
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=black!5!white,colframe=black!75!black,colbacktitle=red!80!black,
+  title=Exercise-60.2:.,fonttitle=\bfseries,boxed title style={size=small,colframe=red!50!black} ]
+  \textit{ {\color{red}\underline{Solution:}}}
+$$f_n (x)=\frac{1}{1+n^2 x^2}\Longrightarrow$$
+$\{f_n\}$ converges pointwise to $f$ on $[0,1]$, where:\\
+$f(x)=\begin{cases}
+0 & 0< x \leq 1\\
+1 & x=0
+\end{cases}$\\
+Since $f$ is not continuous at point $0\Rightarrow~\{f_n\}$ is not uniformly convergent. 
+\noindent{\color{black}\rule{\linewidth}{.3mm}}
+$$g_n (x)=xn(1-x)^n\Longrightarrow$$
+$\{g_n\}$ converges pointwise to $g$ on $[0,1]$, where:\\
+$g(x)=\begin{cases}
+0 & 0< x \leq 1\\
+c & x=0 ~,where~c\in[0,1]
+\end{cases}$\\
+Since $g$ is not continuous at point $0\Rightarrow~\{g_n\}$ is not uniformly convergent.
+
+
+\end{tcolorbox}
+%--------------------------------------------------------------------------------
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=black!5!white,colframe=black!75!black,colbacktitle=red!80!black,
+  title=Exercise-60.5:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{ {\color{red}\underline{Solution:}}}
+Let $\{f_n\}$ be a sequence of bounded functions on a set $X$.and $\{f_n\}$
+converges uniformly to $f$ on $X$\\
+So since $f_n\rightrightarrows f\Rightarrow\forall\epsilon>0,\exists N\in\mathbb{N}$ such that $|f_n-f|<\epsilon$.\\
+$$|f|=|f-f_n+f_n|\leq |f_n-f|+|f_n|<\epsilon+M$$
+So $f$ is bounded.\\
+\noindent{\color{black}\rule{\linewidth}{.3mm}}
+Let $f_n=\frac{x}{n}+\frac{1}{x}\{0<x\leq 1\}$, so $f_n\rightarrow f$ such that $f=\frac{1}{x}\{0<x\leq 1\}$ and $f$ is unbounded.
+\end{tcolorbox}
+%--------------------------------------------------------------------------------
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=black!5!white,colframe=black!75!black,colbacktitle=red!80!black,
+  title=Exercise-60.10:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{ {\color{red}\underline{Solution:}}}
+ let $C[a,b]$ denote the set of continuous real-valued functions
+on $[a,b]$. We define a metric d on $C[a,b]$ by the formula:
+$$d(f,g)=sup\{|f(x)-g(x)|,x\in[a,b]\}$$
+Let $f_n$ be a Cauchy sequence in $C[a,b]$, then $\forall\epsilon>0$, there is $N$ such that $||f_n-f_m||<\epsilon$ for $n,m\geq N\Longrightarrow|f_n-f_m||=sup|f_n-f_m|<\epsilon$.\\
+$|f_n-f_m|\leq sup|f_n(x)-f_m(x)|<\epsilon,\forall n\geq N$.\\
+So $f_n(x)$ converges uniformly to $f(x)$.\\
+And each $f_n$ is continuous on $[a,b]$, and $f_n\rightarrow f$ uniformly on $[a,b]$.\\
+Thus, $f\in C[a,b]$. So $C[a,b]$ is complete.
+
+
+\end{tcolorbox}
+
+
+\section*{61. Integration and Differentiation of Uniformly Convergent
+Sequences}
+%--------------------------------------------------------------------------------
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=black!5!white,colframe=black!75!black,colbacktitle=red!80!black,
+  title=Exercise-61.1:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{ {\color{red}\underline{Solution:}}}
+Let $f_n:=\frac{x+n[x]}{n}| 0\leq x\leq 1$, $f_n$ is convergent pointwise to $f$, such that:$f(x)=[x]$, and\\
+$\lim_{n\to\infty}\int_0^2 \frac{x+n[x]}{n}=\lim_{n\to\infty}\int_0^1
+\left(\frac{x}{n}+\int_1^2 \frac{x+n}{n}\right)=\\
+\lim_{n\to\infty}\left(\frac{x^2}{2n}|_0^1+(\frac{x^2}{2n}+x|_1^2)\right)=\lim_{n\to\infty}\left(\frac{1}{2n}+\frac{4}{2n}+2-\frac{1}{2n}-1\right)=1$\\
+and $\int_0^2 [x]=\int_0^1 0+\int_1^2 1=x|_1^2)=1\Rightarrow$
+$$\lim_{n\to\infty}\int_0^2 f_n=\int_0^2 f$$
+\end{tcolorbox}
+
+%--------------------------------------------------------------------------------
+\end{document}

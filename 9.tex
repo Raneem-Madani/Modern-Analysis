@@ -1,0 +1,117 @@
+\documentclass[12pt]{amsbook}
+\usepackage[utf8]{inputenc}
+\title{\Huge{Modern-Analysis 2\\Lecture-15}}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage[most]{tcolorbox}
+\begin{document}
+\begin{tcolorbox}[colback=brown!10!white,colframe=brown!50!black]
+\maketitle
+%---------------------------------------------------------------------------
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=teal!10!white,colframe=teal!60!black,colbacktitle=teal!70!black,
+  title={\textbf{Theorem (Riemann's Condtion)}}:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=teal!50!black} ]
+Let $f$ be a bounded function on $[a,b]$ and let $\alpha$ be an increasing function on $[a,b]$. Then 
+$f\in\mathscr{R}_\alpha[a,b]$ if and only if for every $\epsilon>0$, there exists a partition $P$ of $[a,b]$ such that:
+$$U(f,p)-L(f,p)<\epsilon$$
+\end{tcolorbox}
+
+%---------------------------------------------------------------------------
+
+{\color{teal}{\textit{\underline{\textbf{Proof:}}}}} Let $f\in\mathscr{R}_\alpha[a,b]$, and $\epsilon>0$, $\exists P,S$ such that:
+$$\int_a^b fd\alpha-\frac{\epsilon}{2}<L(f,P),\text{and } U(f,S)<\int_a^b fd\alpha+\frac{\epsilon}{2}$$
+$$\color{teal}\boxed{\underline{\int}_a^b fd\alpha=\overline{\int}_a^b f d\alpha=\int_a^b f d\alpha}$$
+Let $T=P\cup S$,
+$U(f,T)\leq U(f,S)$\\
+and $L(f,T)\geq L(f,P)\Rightarrow-L(f,T)\leq -L(f,P)$...{\color{teal}\textbf{"The Previous Lemma"}}\\
+So $U(f,T)-L(f,T)\leq U(f,S)-L(f,P)\leq\int_a^b fd\alpha+\frac{\epsilon}{2}+\frac{\epsilon}{2}-\int_a^b fd\alpha=\epsilon$\\
+%---------------------------------------------------------------------------
+{\color{teal}"$\Longrightarrow$"} Let for any $\epsilon>0,\exists P$ such that $U(f,P)-L(f,P)<\epsilon$
+$${\color{teal}\boxed{U(f,P)\geq\overline{\int}_a^b f d\alpha,, L(f,P)\leq\underline{\int}_a^b f d\alpha,,-\underline{\int }_a^b 
+f\alpha\leq-L(f,P)}}$$
+\end{tcolorbox}
+
+%---------------------------------------------------------------------------
+
+\begin{tcolorbox}[colback=brown!5!white,colframe=brown!60!black]
+So $0\leq \overline{\int}_a^b f d\alpha-\underline{\int}_a^b fd\alpha\leq U(f,P)-L(f,P)<\epsilon$\\
+So $0\leq\overline{\int}_a^b fd\alpha-\underline{\int}_a^b fd\alpha<\epsilon,\forall\epsilon>0$
+${\color{teal}\boxed{0\leq a\leq \epsilon,\forall\epsilon>0\Rightarrow a=0}}$\\
+$\Rightarrow\overline{\int}_a^b fd\alpha-\underline{\int}_a^b f d\alpha=0\Rightarrow \overline{\int}_a^b f 
+d\alpha=\underline{\int}_a^b f d\alpha$ , {So $f\in\mathscr{R}[a,b]$}\\
+\noindent{\color{teal} \rule{\linewidth}{0.4mm} }
+$f,\alpha,P$ , $U(f,P)=\sum_{i=1}^n M_i\Delta\alpha_i$, $L(f,P)=\sum_{i=1}^n m_i\Delta\alpha_i$\\
+$U=\{$Upper sums for all  partitions\} , $L=\{$Lower sum for all  partition\}\\
+$\overline{\int}_a^b fd\alpha=infU$ , $\underline{\int}_a^b f d\alpha=sup L$\\
+$f\in\mathscr{R}\iff\forall\epsilon>0,\exists P$ such that: $U(f,p)-L(f,P)<\epsilon$\\
+{\color{teal}$"\Longleftarrow"$} $\underline{\int}_a^b f d\alpha=\overline{\int}_a^b fd\alpha=\int_a^b f d\alpha$\\
+$\exists S$ such that $\int_a^b f d\alpha +\frac{\epsilon}{2}>U(f,S){\color{teal}\geq U(f,T)}$\\
+$\exists P$ such that $-\int_a^b fd\alpha+\frac{\epsilon}{2}>L(f,P){\color{teal}\leq L(f,T)\Rightarrow U(f,p)-L(f,T)<\epsilon}$
+\noindent{\color{teal} \rule{\linewidth}{0.4mm} }
+{\color{teal}{\textit{\underline{\textbf{Example:}}}}} $I=[a,b],c\in(a,b), K_1,K_2$\\
+define $\alpha(x)=$
+$\begin{cases}
+K_1,& a\leq x<c\\
+\text{any point in } [K_1,K_2],& x=c\\
+K_2,& c<x\leq b
+\end{cases}$.\\
+Let $f:[a,b]\mapsto\mathbb{R}$ be bounded, continuous , show that $f\in\mathscr{R}[a,b]$ and find $\int_a^b fd\alpha$.\\
+{\color{teal}{\textit{\underline{\textbf{Solution:}}}}} since $f$ is continuous at $c$, $\forall\epsilon>0,\exists x_1,x_2\in [a,b]$ such that:\\
+$a<x_1<c<x_2<b$ and if $x\in[x_1,x_2]$ then $|f(x)-f(c)|<\frac{\epsilon}{3(k_1-k_2)},\forall x\in[x_1,x_2]$
+
+\end{tcolorbox}
+
+\begin{figure}
+\centering
+    \includegraphics*[width=8cm]{1.png}
+    {\color{teal}\caption{$\delta>0$ such that $|x-c|<\delta\Rightarrow|f(x)-f(c)|<\epsilon$}}
+\end{figure}
+
+\begin{tcolorbox}[colback=brown!5!white,colframe=brown!60!black]
+Now let $P=\{a,x_1,x_2,b\}$, $U(f,P)=\sum_{k=1}^3 M_k\Delta\alpha_k$\\
+$=M_1(\alpha(x_1)-\alpha(a))+M_2(\alpha(x_2)-\alpha(x_1))+M_3(\alpha(b)-\alpha(x_2))=M_2(k_2-k_1)$\\
+$\leq\left(f(c)+\frac{\epsilon}{3(k_2-k_1)}\right)(k_2-k_1)=f(c)(k_2-k_1)+\frac{\epsilon}{3}\cdots (1)$\\
+$L(f,P)=\sum_{k=1}^3
+m_k\Delta\alpha_k=m_2(\alpha(x_2)-\alpha(x_1))=m_2(k_2-k_1)$\\
+$\geq\left( f(c)-\frac{\epsilon}{3(k_2-k_1)}\right)(k_2-k_1)=f(c)(k_2-k_1)-\frac{\epsilon}{3}$\\
+So $-L(f,P)\leq-f(c)(k_2-k_1)+\frac{\epsilon}{3}\cdots (2)$\\
+$U(f,P)-L(f,P)\leq f(c)(k_2-k_1)+\frac{\epsilon}{3}-f(c)(k_2-k_1)+\frac{\epsilon}{3}=\frac{2}{3}\epsilon<\epsilon$\\
+$\Rightarrow f\in\mathscr{R}_\alpha[a,b]$ {\color{teal}{\textit{\underline{\textbf{(Riemann's condition)}}}}}\\
+Now, $\int_a^b fd\alpha=\overline{\int}_a^b fd\alpha\leq U(f,P)\leq f(c)(k_2-k_1)+\frac{\epsilon}{3}$\\
+$\Rightarrow\int_a^b fd\alpha\leq f(c)(k_2-k_1)+\frac{\epsilon}{3}, \forall\epsilon>0$\\
+$\int_a^b fd\alpha\leq f(c)(k_2-k_1)\cdots (1)$\\
+Also, $\int_a^b fd\alpha=\underline{\int}_a^b fd\alpha\geq L(f,P)=f(c)(k_2-k_1)-\frac{\epsilon}{3},\forall \epsilon>0$\\
+$\int_a^b fd\alpha\geq f(c)(k_2-k_1)\cdots (2)$
+$$\Rightarrow\int_a^b fd\alpha=f(c)(k_2-k_1)$$
+\noindent{\color{teal} \rule{\linewidth}{0.8mm} }\\
+{\color{teal}{\textit{\underline{\textbf{Example:}}}}} Let $\alpha(x)=\begin{cases}
+1 & 1\leq x<2\\
+\frac{3}{2} & x=2\\
+2 & 2<x\leq 3
+\end{cases}$\\
+Find $\int_1^3 (\sin x)^{x^2+1}d\alpha=(\sin 2)^5(2-1)$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=brown!10!white,colframe=brown!50!black]
+\begin{center}
+    \textbf{Anyone with this link can view this project:\\
+    https://www.overleaf.com/read/vrmsnmtjsgqg}
+
+\end{center}
+\end{tcolorbox}
+
+\end{document}

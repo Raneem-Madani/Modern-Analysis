@@ -1,0 +1,272 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\title{\Huge Homework.2}
+\author{\huge Raneem Madani }
+\date{\today}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\begin{document}
+\maketitle
+
+
+\section*{36: $\mathbb R^n, l^2$}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.3:.,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+  \textit{\underline {\color{blue}Solution:}}
+  \begin{itemize}
+\item let \{ $a_n$\} $\in l^1 \Rightarrow \sum_{k=1}^{\infty}|a_n|<\infty$\\
+    $|a_n|\mapsto 0$\\
+    $\forall \epsilon>0$, $\exists k\in \mathbb{N} $ such that:\\
+    $a_k <\epsilon$, $\forall n\geq k$ {\textit{\color{red}(Take $\epsilon=1$)}}\\
+    $\Rightarrow a_k<1$\\
+    $\Rightarrow a_k^2<|a_k|$\\
+    $\sum_{k=1}^{\infty} a_k^2<\sum_{k=1}^{\infty} a_k$
+\item let $\{ a_n\}\in l^2\Rightarrow \sum_{n=0}^{\infty}a_n^2<\infty$\\
+    $\Leftrightarrow a_n^2\longmapsto 0$\\
+    $\Rightarrow \{a_n\}\in c_0\Rightarrow l^2\subset c_0$
+\item let $a_n=\frac{1}{n}\Rightarrow$ 
+$a_n\in l^2$, $a_n\notin l^1$\\
+let $b_n=\frac{1}{\sqrt{n}}\Rightarrow$
+$b_n\in c_0$, $b_n\notin l^2$
+ $$\tcbhighmath{\textit{$l^1\subset l^2\subset c_0$}.}$$
+\end{itemize}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.8:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\{a_n\}\in l^1\Rightarrow\sum_{k=1}^{\infty}|a_n|<\infty$\\
+since $\{b_n\}\in l^\infty\Leftrightarrow|b_n|<M$\\
+$\sum_{k=1}^{\infty}|a_n b_n|\leq \sum_{k=1}^{\infty}|a_n| M$\\
+$=M\sum_{k=1}^{\infty}|a_n|<M.\infty=\infty$\\
+$\Rightarrow \sum_{k=1}^{\infty} |a_n b_n|$ is convergent.
+$$\tcbhighmath{\{a_n b_n \}\in l^1}$$
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.9:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\{a_n\}\in c_0 \Leftrightarrow a_n\longmapsto 0$\\
+$\forall \epsilon>0$, $\exists k\in\mathbb{N}$ such that $|a_n|<\epsilon_0$ $\forall n\geq k$\\
+let $\{b_n\}\in l^\infty\Leftrightarrow|b_n|\leq M$\\
+let $\epsilon_0=\frac{\epsilon}{M}$\\
+$\Rightarrow |a_n b_n|\leq M|a_n| <M\frac{\epsilon}{M}=\epsilon$
+$$\tcbhighmath{\{a_n b_n\}\in c_0}$$
+{\color{red}Give an example:}\\
+Let $a_n=\frac{1}{\sqrt{n}}\in C_0$, and let $b_n=(-1)^n\in l^\infty\Rightarrow$\\
+$ a_n b_n =\frac{(-1)^n}{\sqrt{n}}\Rightarrow \sum (a_n b_n)^2=\sum \frac{1}{n}\notin l^2\Rightarrow \{a_n b_n\}\notin l^2$
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 36.10:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\{a_n\} \in l^\infty \Leftrightarrow |a_n| \leq M$\\
+Let $\{b_n\}\in l^\infty\Leftrightarrow |b_n|<N$, $\forall N,M\in \mathbb{R}$\\
+$\Rightarrow |a_n b_n|\leq M.N\Rightarrow$
+$$\tcbhighmath{\{a_n b_n\}\in l^\infty}$$
+{\color{red}Give an example:}\\
+Let $\{a_n\}=(-1)^n$\\
+Let $\{b_n\}=(-1)^{1-n}\Rightarrow$\\
+$a_n b_n=(-1)^n (-1)^{1-n}=(-1)^{n+1-n}=-1$\\
+$a_n b_n=-1\Rightarrow a_n b_n\longmapsto -1$\\
+$\{a_n b_n\}\notin c_0$
+\end{tcolorbox}
+
+
+\section*{37: Sequences in Metric Spaces}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 37.7:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ \textit{\color{blue}\underline{Solution:}}
+ Let $\{a_n^{(k)}\}$ be a sequence in $l^1$.\\
+ $a\in l^1$, $a=(a_1,a_2,a_3,...)$\\
+ if $\{a^{(k)}\}$ convergent to a then $\lim a_j^{(k)}=a_j$, $\forall j=1,2,3..,$\\
+ $|a_j^{(k)}|-|a_j|<|a_j^{(k)}-a_j|<\epsilon$, $\forall j=1,2,3..,$\\
+ Let $\epsilon =1$\\
+ $\Rightarrow|a_j^{(k)}|<1+|a_j|=M$\\
+ $\Rightarrow |a^{(k)}|<M$
+ $$\tcbhighmath{\{a^{(k)}\}\in l^\infty}$$
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 37.9 (a): ,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+   \textit{\color{blue}\underline{Solution:}}
+  $d:\mathbb{R}^n\times \mathbb{R}^n\longmapsto[0,\infty )$
+   \begin{enumerate}
+       \item $d(x,y)=0\Leftrightarrow x=y$ {\color{red}"Trivial"} 
+       \item $d(x,y)=d(y,x)${\color{red}"Trivial"}
+       \item Triangle inequality: $d(x,z)\leq d(x,y)+d(y,z)$\\
+       $\sum_{i-1}^{n}|x_i-z_i|=\sum_{i=1}^{n}|x_i-y_i+y_i-z_i|$
+       $\leq \sum_{i=1}^{n}|x_i-y_i|+|y_i-z_i|= \sum_{i=1}^{n}|x_i-y_i|+\sum_{i=1}^{n}|y_i-z_i|$
+       $=d(x,y)+d(y,z)$
+       
+   \end{enumerate}
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 37.9 (b):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+   \textit{\color{blue}\underline{Solution:}}
+Let $\{a^{(k)}\}$be a sequence in $\mathbb{R}^n$\\
+$d(a^{(k)},a)<\epsilon$, $\forall\epsilon>0$\\
+{\color{red}$"\Rightarrow"$} Let $\{a^{(k)}\}$ convergent to $a$\\
+$d(a^{(k)},a)<\epsilon$\\
+$d(a^{(k)},a)=\sqrt{\sum_{j=1}^{n}(a_j^{(k)}-a_j)^2}$\\
+Let $\epsilon_0=\frac{\epsilon}{n}$\\
+By Theorem: $|a_j^{(k)}-a_j|\leq{\sum_{j=1}^{n}(a_j^{(k)}-a_j)^2}=d(a^{(k)},a)<\epsilon_0\Rightarrow$\\ 
+  $$\tcbhighmath{d'(a^{(k)},a)=\sum_{j=1}^{n}|a_j^{(k)}-a_j|<\sum_{j=1}^{n}\frac{\epsilon}{n}=\frac{\epsilon}{n}n=\epsilon}$$
+$\color{red}"\Leftarrow"$ Let $\{a^{(k)}\}$ convergent to $a$\\
+$d'(a^{(k)},a)=\sum_{j=1}^{n}|a_j^{(k)}-a_j|<\epsilon_0$\\
+$|a_j
+^{(k)}-a_j|<\sum_{j=1}^{n}|a_j^{(k)}-a_j|<\epsilon_0$\\
+Let $\epsilon_0=\frac{\epsilon}{\sqrt{n}}$\\
+ $$\tcbhighmath{d(a^{(k)},a)=\sqrt{\sum_{j=1}^{n}(a_j^{(k)}-a_j)^2}\leq \sqrt{\sum_{j=1}^{n}(\frac{\epsilon^2}{n})}=\sqrt{\sum_{j=1}^{n}\frac{\epsilon^2}{n}}=\epsilon}$$
+ \end{tcolorbox}
+
+
+
+
+\section*{38: Closed Sets}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 38.5(a):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+{\color{red} Prove that $x$ is closed $\iff$ $x^\alpha\subseteq x$}\\ \textit{\color{blue}\underline{Proof:}}\\
+{\color{red} $"\Rightarrow"$} let $x$ be a closed set $\Rightarrow \overline{x}=x$\\
+$x^\alpha\subseteq\overline{x}\Longrightarrow x^\alpha\subseteq x$\\
+{\color{red} $"\Leftarrow"$} Let $x^\alpha\subseteq x$\\
+let $a$ be a limit point then $\exists \{x_n\}$ such that $\lim x_n=a$
+\begin{itemize}
+    \item $x_n=a$ for some $n$\\
+    $\Rightarrow a\in x$
+    \item $x_n\neq a$ for some $n$\\
+    $\Rightarrow a\in x^\alpha$ and we suppose that $x^\alpha\subseteq x$\\
+    $\Rightarrow a\in x$
+\end{itemize}
+{\color{red}$\therefore x$ is closed} 
+ \end{tcolorbox}
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 38.5(b):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ \textit{\color{blue}\underline{Proof:}}\\
+Let $x\subseteq\mathbb{R}$ and $x$ is an infinite and bounded set then we have:
+\begin{center}
+    $a_1\in x$\\
+    $a_1\neq a_2\in x$\\
+    $\vdots$\\
+    $a_2\neq a_k\in x$\\
+    $\{a_k\}\subseteq x\subseteq \mathbb{R}$
+\end{center}
+$\exists \{a_{k_l}\}$ that convergent to $a$\\
+$$\tcbhighmath{{\therefore a\in x^\alpha\Rightarrow x^\alpha\neq \phi}}$$ 
+ \end{tcolorbox}
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 38.5(c):,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+ \textit{\color{blue}\underline{Proof:}} Suppose the contrary,\\
+ Let $X\subseteq\mathbb{R}$ be an uncountable and contains non of accumulation points.\\
+ $\Rightarrow\forall x\in X$, $\exists \epsilon_x>0$ such that:
+ $$\nu_\epsilon (x)\cap X=\{x\}$$
+ $\Rightarrow\exists n\in \mathbb{N}$ such that $X^\alpha=\{x\in X: \epsilon_x>\frac{1}{n}\}$ is uncountable.\\
+ consider the family:
+ $$\tcbhighmath{\{(x-\frac{1}{2n},x+\frac{1}{2n}):x\in X^\alpha\}}$$
+ this is an uncountable family of pairwise disjoint open subsets of $\mathbb{R}$ which contradicts that the countable set $\mathbb{Q}$ is a dense subset of $\mathbb{R}$.
+
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Prove that $B_\epsilon (x)$is open set:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Proof:}}
+     Let $y\in B_\epsilon (x)$, want to find $\delta >0$ such that:\\
+     $B_\delta (y)\subseteq B_\epsilon (x)$\\
+     consider $\delta=\epsilon-d(x,y)>0$\\
+     $\Rightarrow d(x,y)<\epsilon\Rightarrow \epsilon-d(x,y)>0$\\
+     Let $z\in B_\delta (y)\Rightarrow d(z,y)<\delta$\\
+     $\Rightarrow d(z,y)<\epsilon-d(x,y)$\\
+     $d(x,z)\leq d(x,y)+d(y,z)<d(x,y)+\epsilon$\\
+     $=d(x,y)+\epsilon-d(x,y)=\epsilon$\\
+     $\therefore d(x,z)<\epsilon\Rightarrow z\in B_\epsilon (x)\Rightarrow B_\delta (y) \subseteq B_\epsilon (x)$\\
+     so $B_\epsilon (x)$ is an open set of $M$
+
+\end{tcolorbox}
+
+\section*{40: Continuous Functions on Metric Spaces}
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.10:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\epsilon >0$ be given\\
+$\Rightarrow \forall \epsilon>0$, $\exists \delta>0$ such that:\\
+$d_1 (b_n,c_n)<\delta$ whenever $d_2 (f(b_n),f(c_n))<\epsilon$\\
+Let $\{b_n\}\in l^1$ since $\{a_n\}\in l^\infty\Rightarrow |a_n|\leq M$\\
+Let $\{c_n\}\in l^1\Rightarrow d(\{b_n\},\{c_n\})<\delta$\\
+$\sum|b_n-c_n|<\delta$, Let $\delta=\frac{\epsilon}{M}$\\
+$|f(c_n)-f(b_n)|=|\sum a_n c_n-\sum a_n b_n|$\\
+$\leq\sum |a_n||c_n-b_n|<M\frac{\epsilon}{M}=\epsilon$
+\end{tcolorbox}
+
+
+
+\begin{tcolorbox}[enhanced,attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},
+  colback=blue!5!white,colframe=blue!75!black,colbacktitle=red!80!black,
+  title=Exercise 40.11:,fonttitle=\bfseries,
+  boxed title style={size=small,colframe=red!50!black} ]
+     \textit{\color{blue}\underline{Solution:}}
+Let $\{a_n\} \in l^2\iff \sqrt{\sum_{n=1}^{\infty} a_n ^2}<\epsilon$\\
+want to show that $f$ is continuous at $c=\{c_n\}$ and $b=\{b_n\}$\\
+$\forall\epsilon>0$, $\exists\delta>0$ such that:\\
+$|c_n-b_n|<\delta$ whenever $|f(c_n)-f(b_n)|<\epsilon$\\
+$|f(c_n)-f(b_n)|=|\sum_{n=1}^{\infty}c_n a_n-\sum_{n=1}^{\infty}b_n a_n|=|\sum_{n=1}^{\infty}(a_n)(c_n-b_n)|$\\
+$$\leq\sqrt{\sum_{n=1}^{\infty} a_n^2}\sqrt{\sum_{n=1}^{\infty}(c_n-b_n)^2}$$
+{\color{red}$$Let:\delta=\frac{\epsilon}{\sqrt{\sum_{n=1}^{\infty}a_n^2}}$$}
+$$=d(c_n,b_n)\sqrt{\sum_{n=1}^{\infty} a_n^2}<\frac{\epsilon}{\sqrt{\sum_{n=1}^{\infty} a_n^2}}\sqrt{\sum_{n=1}^{\infty} a_n^2}=\epsilon$$
+\end{tcolorbox}
+
+
+\end{document}

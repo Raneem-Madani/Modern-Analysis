@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\title{\Huge{Modern-Analysis 2\\Lecture-22}}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\usepackage{tikz,lipsum,lmodern}
+\usepackage[a4paper, total={6in,8in}]{geometry}
+\usepackage[most]{tcolorbox}
+\begin{document}
+\maketitle
+\newpage
+
+
+\section*{55:Riemann-Stieltjes Integration with Respect to Functions of Bounded Variation}
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Theorem ]
+     $\alpha$ continuous and differentiate on $[a,b]$, if $f,\alpha'\in\mathscr{R}[a,b]\Rightarrow f\in\mathscr{R}_\alpha[a,b]$ and
+$$ \tcbhighmath{\int_{a}^{b} f(x)d\alpha(x)=\int_{a}^{b}f(x)\alpha'(x)dx}$$
+
+\end{tcolorbox}
+
+{{\color{blue}\underline {Example}} Find:}
+\begin{enumerate}
+    \item  $\int_0^1 x^2 d x^2=\int_0^2 x^2(2x)dx=\frac{1}{2}x^4|_0^2=\frac{16}{2}=8$
+    \item $\int_0^2 [x]dx^2 =\int_0^1 [x]dx^2+\int_1^2 [x]dx^2=\int_0^1 0dx^2+\int_1^2 1dx^2=0+\int_1^2 2xdx=3$
+    \\
+\end{enumerate}
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Corollary "Fundamental theorem"]
+   Let $f$ be continuous and differentiable on $[a,b]$. If $f'\in\mathscr{R}[a,b]\Longrightarrow$ 
+$$ \tcbhighmath{\int_a^b f'(x)=f(b)-f(a)}$$
+{\color{blue}\underline {Proof:}} $\int_a^b f'(x)dx=\int_a^b 1 f'(x) dx=\int_a^b1 df(x)=f(b)-f(a)$
+\\
+\end{tcolorbox}
+
+{\color{blue}\underline {Example:}} Find $\int_1^4 \sqrt{x^2+1}d(x^2+3)=\int_1^4\sqrt{x^2+1}(2x)dx=\frac{2}{3}(17^{\frac{3}{2}}-1)$ \newpage
+
+\section*{Chapter X: Sequences and Series of Functions}
+\section*{\large{sec-60:Pointwise Convergence and Uniform Convergence}}
+$$\{f_n\}_{n=1}^\infty,f_n:x\mapsto\mathbb{R},d(x,y)=|x-y|$$
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Definition:]
+   $\{f_n\}$, $f_n:x\longmapsto\mathbb{R}$, $f:x\longmapsto\mathbb{R}$, We say that $\{f_n\}_{n=1}^\infty$ converges pointwise to $f$ on $X$ if $\lim_{n\mapsto\infty}f_n(x)=f(x),\forall x\in X.$
+\end{tcolorbox}
+
+{\color{blue}\underline {Example:}} $f_n (x)=x^2, 0\leq x\leq 1$\\
+$x=\frac{1}{2},\frac{1}{4},...$\\
+$f(\frac{1}{2}),f(\frac{1}{4}),...\mapsto 0$\\
+$f(1)\mapsto 1$\\
+so $f_n$ converges pointwise to $f$, where 
+$f(x)=\begin{cases} 
+      0 &,0\leq x< 1\\
+      1 &,x=1
+\end{cases}$
+
+
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Definition:]
+   $\{f_n\}$, $f_n:x\longmapsto\mathbb{R}$, $f:x\longmapsto\mathbb{R}$, We say that $\{f_n\}_{n=1}^\infty$ converges uniformly to $f$ on $X$ if $\epsilon >0 , \exists $N $\in N$ s.t $|f_n(x) - f(x) |< \epsilon $\\ $ \forall n \geq N ,  \forall x \in X.$  
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Theorem ]
+     Uniform Converges $\Rightarrow$ pointwise convergence . 
+  $$\tcbhighmath{Notation : 
+      f_n \rightarrow f {\color{red}{(point-wise)}} \hspace{2mm}
+  ,  f_n \rightrightarrows  f
+     {\color{red}{(uniform)}}}$$
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Theorem:]
+   if $\{f_n\}$, $f_n:M \longmapsto\mathbb{R}$, $f:M\longmapsto\mathbb{R}$, We say that $\{f_n\}_{n=1}^\infty${\color{red}{ converges uniformly}} to $f$ on $M$ if $f_n$ is cont. at $a$ Then $f$ is cont. at $a$ \\ 
+   {\color{blue}\underline {PF: }} Let $d$ be the metric of $M$ \\ $f_n \Rightarrow f$ \\ $f_n$ is cont. at $a \Rightarrow f$ is cont. at $a$ \\
+   So $\forall \epsilon >0  \exists$ N s.t $|f_n(x)-f(x)| < \frac{\epsilon}{3} ,$ $\forall x \in M$ \\ 
+   $\forall \epsilon >0 , |f(x)-f(a)| = |f(x)-f_N(X)+f_N(X)-f_N(a)+f_N(a) -f(a)|$ \\
+   $\leq |f(x)-f_N(x)| +|f_N(x)-f_N(a)|+|f_N(a)-f(a)|$\\
+   $ < \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} =\epsilon$
+   \hspace{6mm}{\color{red}{if\hspace{1mm} $d(x,a) < \delta$}} \\
+   Thus $f$ is cont. at $a$ 
+\end{tcolorbox}
+\begin{tcolorbox}[colback=blue!5!white,colframe=red!75!black,title=Note :]
+* Uniform $\Rightarrow $ Pointwise  but The converse is false . \\ Counter example : $f_n$ {\color{red}{converges pointwise}} to $f$, where 
+$f(x)=\begin{cases} 
+      0 &,0\leq x< 1\\
+      1 &,x=1
+\end{cases}$\\
+but if you take the limit it's not cont. so it.s{\color{red}{ not convergence uniformly}}
+\end{tcolorbox}
+\end{document}

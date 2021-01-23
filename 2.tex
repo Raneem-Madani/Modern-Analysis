@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\title{\Huge{Modern Analysis}}
+\author{\Large{Raneem Almadani}}
+\date{\today}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\renewcommand{\baselinestretch}{1.5}
+\newtheorem{theorem}{Theorem}
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.markings}
+\usepackage{graphicx}
+\begin{document}
+\maketitle
+\newpage
+\section*{5.4: Uniform Continuity}
+\begin{theorem}
+:Recall that a function $f\colon A \mapsto\mathbb{R}$ is said to be \textit{\underline{\color{purple}Uniformly Continuous}} on $A$ if $\forall \epsilon>0,\exists \delta(\epsilon) >0 $ such that if $x,y \in A$, satisfy $|x-y|<\delta$ then $|f(x)-f(y)|<\epsilon$.
+\end{theorem}
+\boxed{\frac{1}{144}}
+Show that the function $f(x):=\frac{1}{x}$ is uniformly continuous on the set $A:=[a,\infty)$, where $a$ is a positive constant.\\
+\textbf{\underline{\textit{\color{purple}Solution:}}}
+$f(x):=\frac{1}{x}$, $\forall x\in [a,\infty)$, $a>0$\\
+Let us consider:\\
+$|f(x)-f(c)|=\left |\frac{1}{x}-\frac{1}{c} \right |$\\
+$\frac{|c-x|}{|cx|}\leq \frac{|x-c|}{a^2}$\\
+($a<x,c\Rightarrow \frac{1}{a}>\frac{1}{x}$, $\frac{1}{a}>\frac{1}{c}$)\\
+So, $|f(x)-f(c)|\leq \frac{|x-c|}{a^2}$\\
+$\therefore f(x):=\frac{1}{x}$ is \textit{\color{purple}Uniformly Continuous.}\\
+\\
+\boxed{\frac{9}{144}}
+{if $f$ is uniformly continuous on $A\subseteq \mathbb{R}$ and $|f(x)|\geq k>0$ for all $x\in A show that \frac{1}{f}$ is uniformly continuous on $A$.}\\
+\textbf{\underline{\textit{\color{purple}Solution:}}}
+$f-$ Uniformly Continuous on $A\subset\mathbb{R}$\\
+$|f(x)|\geq k>0$, for all $x\in A$\\
+\underline{To show:}$\frac{1}{f}$ is uniformly continuous, let us consider:\\
+$\left |\frac{1}{f(x)}-\frac{1}{f(c)} \right |=\frac{|f(x)-f(c)|}{|f(x)f(c)|}\leq\frac{|f(x)-f(c)|}{k^2}$\\
+$\therefore\left |\frac{1}{f(x)}-\frac{1}{f(c)}\right |\leq \left(\frac{1}{k^2}\right )|f(x)-f(c)|$......(1)\\
+So, for $\epsilon>0$, choose $\delta>0$ such that $|f(x)-f(c)|<k^2\epsilon$ whenever $|x-c|<\delta$ 
+From(1):$\left |\frac{1}{f(x)}-\frac{1}{f(c)} \right |<\frac{1}{k^2}(k^2\epsilon)$, whenever $|x-c|<\delta$\\
+$\therefore \frac{1}{f}$ is also {\color{purple}\textit{Uniformly Continuous.}}
+
+\newpage
+\section*{6.1: The Derivative}
+\begin{theorem}
+:$f\colon A\mapsto\mathbb{R}$,$c\in I$ we say that $L\in\mathbb{R}$ is \underline{Derivative} of $f$ at $c$,(${f(c)}'$) if $\forall\epsilon>0$,${\exists\delta>0}$ such that if $x\in\mathbb{R}$,$0<|x-c|<\delta$ then:
+$\left|\frac{f(x)-f(c)}{x-c}-L\right |<\epsilon$.
+\end{theorem}
+ \boxed{\frac{9}{171}}
+ Prove that if $f\colon\mathbb{R}\mapsto\mathbb{R}$ is an \textbf{even function} [that is,$f(-x)=f(x)$ for all $x\in\mathbb{R}$] and has a derivative at every point, then the derivative ${f}'$ is an \textbf{odd function} [that is,${f}'(x)=-{f}'(x)$ for all $x\in\mathbb{R}$].Also prove that if $g\colon\mathbb{R}\mapsto\mathbb{R}$ is a differentiable odd function,then ${g}'$ is an even function.\\
+ \textbf{\underline{\textit{\color{purple}Solution:}}}
+ \begin{itemize}
+     \item let $f$ be an even function $\Rightarrow f(-x)=f(x)$ $\forall x$\\
+${f}'(c)=\lim_{x\to c}\frac{f(x)-f(c)}{x-c}$\\
+${f}'(-c)=\lim_{x\to -c}\frac{f(x)-f(-c)}{x-(-c)}$\\
+$=\lim_{x\to c}\frac{f(-x)-f(c)}{-x+c}$\\
+$=\lim_{x\to c}\frac{f(x)-f(c)}{-(x-c)}$, but $f(-x)=f(x)\Rightarrow$\\
+$=-\lim_{x\to c}\frac{f(x)-f(c)}{x-c}$\\
+$=-{f}'(c)$
+\item let $g$ be an odd function $\Rightarrow g(-x)=-g(x)$ $\forall x$\\
+${g}'(c)=\lim_{x\to c}\frac{g(x)-g(c)}{x-c}$\\
+${g}'(-c)=\lim_{x\to -c}\frac{g(x)-g(-c)}{x-(-c)}$\\
+$=\lim_{x\to c}\frac{g(-x)-g(c)}{-x+c}$\\
+$=\lim_{x\to c}\frac{-g(x)-(-g(c))}{-(x-c)}$, but $g(-x)=-g(x)\Rightarrow$\\
+$=\lim_{x\to c}\frac{g(x)-g(c)}{x-c}$\\
+$={g}'(c)$
+ \end{itemize}
+ 
+\newpage
+\section*{6.2: Mean Value}
+\begin{theorem}
+:If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then $\exists c \in (a,b)$ such that: 
+$${f}'(c) =\frac{f(b)-f(a)}{b-a}$$ 
+\end{theorem}
+\boxed{\frac{2}{179}}
+Find the point of relative extrema, the intervals on which the following function are increasing, and those on which they are decreasing:\\
+   (b) $g(x):=\frac{x}{x^2+1}$\hspace{.5cm}for $x\in\mathbb{R}$.\\
+ \textbf{\underline{\textit{\color{purple}Solution:}}}
+ \begin{itemize}
+     \item Point of relative exterma:
+     \\${g}'(x)=\frac{x(2x)-(x^2+1)}{(x^2+1)^2}$
+     \\$=\frac{2x^2-x^2-1}{(x^2+1)^2}$
+     \\$=\frac{1-x^2}{(x^2+1)^2}$
+     \\${g}'(x)=0$
+     \\$1-x^2=0$
+     \\$\color{purple}x=\pm 1$
+     \item Find Increasing or Decreasing:Try to check the signal of function:\\
+     \\
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.35,0.87) rectangle (6,2.79);
+\draw (1.,2.)-- (5.,2.);
+\draw (0.2,2.70) node[anchor=north west] {$g'(x)$};
+\draw (0.50,2) node[anchor=north west] {$-\infty$};
+\draw (1.3,2.60) node[anchor=north west] {$-$};
+\draw (4,2.6) node[anchor=north west] {$-$};
+\draw (4.6,1.9) node[anchor=north west] {$+\infty$};
+\draw (1.5,1.9) node[anchor=north west] {$-1$};
+\draw (3.3,1.9) node[anchor=north west] {$1$};
+\draw (2.6,2.6) node[anchor=north west] {$+$};
+\begin{scriptsize}
+\draw [fill=black] (5,2.0) circle (2pt);
+\draw [fill=black] (1,2.0) circle (2pt);
+\draw [fill=black] (2,2) circle (2pt);
+\draw [fill=black] (3.5,2.0) circle (2pt);
+\end{scriptsize}
+\end{tikzpicture}
+\\
+on $(-\infty,-1]$, $g(x)$ is {\color{purple}Decreasing}.\\
+on $(-1,1)$, $g(x)$ is {\color{purple}Increasing}.\\
+on $[1,+\infty)$, $g(x)$ is {\color{purple}Decreasing}.\\
+\begin{figure}
+\centering
+    \includegraphics*[width=10cm]{Analysis.jpg}
+    \caption{$g(x)=\frac{x}{x^2+1}$}
+\end{figure}
+
+\end{itemize}
+\end{document}

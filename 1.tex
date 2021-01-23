@@ -1,0 +1,70 @@
+\documentclass[fleqn,a4paper,12pt,towside]{amsbook}
+\usepackage[left=1cm,right=1.5cm,top=2cm]{geometry}
+\title{{\huge Modern Analysis}}
+\author{{\Large Raneem Madani}}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\vspace{1cm}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter*{{\LARGE Chapter 3\\ Sequences and Series}}
+\section*{{\large 3.1: Sequences and their Limits}}
+\vspace{1cm}
+\begin{enumerate}
+
+\item\textbf{The sequence $(x_n)$ is defined by the following formulas for the $n$ the term. Write the first five terms in each case:}\\
+\begin{enumerate}
+\item $x_n:=1+(-1)^n$\\$0,2,0,2,...$\\
+\item$x_n:=\frac{(-1)^n}{n}$\\$-1,\frac{1}{2},\frac{-1}{3},\frac{1}{4},...$\\
+\item$x_n:=\frac{1}{n(n+1)}$\\$x_1=\frac{1}{2},x_2=\frac{1}{6},x_3=\frac{1}{12}...$\\
+\item $x_n:=\frac{1}{n^2+2}$\\$\frac{1}{3},\frac{1}{6},\frac{1}{11},\frac{1}{18},...$\\
+\end{enumerate}
+\noindent\rule{17cm}{1pt}\\
+
+
+\item [\boxed{\frac{5}{62}}]\textbf{Prove that:}
+$\lim\left (\frac{n}{n^2+1}\right)=0$\\
+\textbf{\underline{solution:}}\\
+Let ${\large \epsilon} > 0$ be given. Then by the Archemedian property there is k $\in \mathbb{N}$ such that $\frac{1}{k} < {\large \epsilon}$.\\
+Now, if $n\geq k$, then we have:\\
+$\left | \frac{n}{n^2+1}-0\right |=\frac{n}{n^2+1} \leq \frac{n}{n^2}= \frac{1}{n}<\frac{1}{k}<\epsilon$.\\
+$\therefore\hspace{.2cm}\lim\frac{n}{n^2+1}=0\qed$
+\end{enumerate}
+
+\section*{{\large 3.3: Monotone Sequence}}
+\vspace{1cm}
+\begin{enumerate}
+\item[\large{$\boxed{\frac{3}{77}}$}]  \textbf{Let $x_1\geq2$ and $x_{n+1}:=1+\sqrt{x_n-1}$ for $n \in\mathbb{N}$. Show that($x_n$) is decreasing\\ and bounded below by 2. Find the limit.}\\
+\textbf{\underline{solution:}}
+\begin{itemize}
+\item Claim 1: Let $x_n \geq 2$\\
+\underline{Proof the claim 1} \textit{(By Induction(PMI))}\\
+$x_1\geq2$, if $x_k\geq2$\hspace{.4cm} \textit{(for some k)} \\
+$\Rightarrow x_{k+1}=1+\sqrt{x_k-1}\geq 1+\sqrt{2-1}=2$\hspace{.4cm} \textit{(for some k)}\\
+$\therefore x_n$ is bounded.\\
+\item Claim 2: $x_n$ is decreasing\\
+\underline{Proof the claim 2:}\\
+We know that $x_1\geq 2$\\
+If $x_{k+1}<x_k$\\
+*Want to show that $x_{k+2}<x_{k+1}$ \hspace{.4cm} \textit{(for some k)}\\
+$\Rightarrow x_{k+2}=1+\sqrt{x_{k+1}-1}<1+\sqrt{x_k-1}=x_{k+1}$  \hspace{.4cm} \textit{(for some k)}\\
+$\therefore x_{k+2}<x_{k+1}$ \hspace{.4cm} \textit{(for some k)}\\
+$\Rightarrow x_n$ is decreasing.\\ 
+\item $x_n$ is bounded and decreasing. \\
+\textit{By the \textbf{(MCT)}} $x_n$ is convergent.\qed\\
+\item So, since $x_n$ is convergent we have: \boxed{$$\lim (x_{n+1})=\lim (x_n)=x$$}\\
+$\Rightarrow \lim (x_{n+1})=1+\lim \sqrt{x_n-1}$\\
+$\Rightarrow x=1+\sqrt{x-1}$\\
+$\Rightarrow (x-1)^2+1-x=0$\\
+$\Rightarrow x^2-3x+2=0$\\
+$\Rightarrow (x_2)(x_1)=0$\\
+$\Rightarrow x=1$ or $x=2$\\
+But $x_n\geq 2\Rightarrow\boxed{\lim x_n=2}$\\
+\noindent\rule{17cm}{1pt}
+
+
+\end{itemize}
+\end{enumerate}
+\end{document}
